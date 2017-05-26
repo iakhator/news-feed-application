@@ -1,19 +1,22 @@
 import React from 'react';
-import News from './News';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import Nav from './header/Nav';
+import NewsFeeds from './NewsFeeds';
 
 export default class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			name: []
-		};
-	}
 	render() {
 		return (
-			<div className="container">
-				<h1>News Feed Application</h1>
-				<News name={this.state.name} />
-			</div>
+			<Router>
+				<div>
+					<Nav />
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route path="/newsfeeds" component={NewsFeeds} />
+						<Route render={() => <p> Not Found </p>} />
+					</Switch>
+				</div>
+			</Router>
 		);
 	}
 }

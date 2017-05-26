@@ -18,5 +18,6 @@ module.exports = {
         "comma-dangle": ["error", "never"],
         "indent": [2, "tab", { "SwitchCase": 1, "VariableDeclarator": 1 }],
         "no-tabs": 0,
+        "no-trailing-spaces": [2, { "skipBlankLines": false }]
     }
 };
