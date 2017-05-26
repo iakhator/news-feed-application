@@ -5,7 +5,7 @@ export default class News extends React.Component {
 	render() {
 		return (
 			<div>
-				<p>Welcome to my app {this.props.name}</p>
+				<p>Welcome to my app</p>
 			</div>
 		);
 	}

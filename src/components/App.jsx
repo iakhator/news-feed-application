@@ -12,7 +12,7 @@ export default class App extends React.Component {
 		return (
 			<div className="container">
 				<h1>News Feed Application</h1>
-				<News name={this.state.name} />
+				<News />
 			</div>
 		);
 	}
