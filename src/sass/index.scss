@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
+
+$roboto: 'Roboto', Arial, sans-serif;
+$black:#333333;
+$blue: #337AB7;
+$light-blue:#245063;
+$rss: #E6772D;
+$white: #ffffff;
+$google-red: #d34836;
+$hash: #2D3D44;
+
 *{
     padding: 0;
     margin: 0;
+    font-family: ubuntu;
 }
 
 a{
@@ -11,12 +23,102 @@ ul{
     list-style-type: none;
 }
 
-.home-page{
-    background: #2391c7;
+.navbar-default .navbar-brand{
+    color: $white;
 }
 
-.nav{
-    display: flex;
+.jumbotron{
+    background: none;
+    text-align: center;
+    .rss{
+        color: $rss;
+        font-size: 200px;
+    }
+    .login{
+        padding: 10px;
+        margin: 10px;
+        width: 25%;
+        font-weight: bold;
+        color: $white;
+        background: $google-red;
+    }
+    p{
+        margin-top: -15px;
+        font-size: 30px;
+    }
+}
+
+button{
+    border: none;
+    border-radius: 3px;
+}
+
+.home-page{
+    margin-top: -20px;
+    background: radial-gradient($light-blue, $black);
+     background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    height: 650px;
+    color:$white;
+    .navbar-nav li a{
+        margin-top: 40px;
+        color: $white;
+    }
+    .navbar-nav li {
+        :hover{
+            background: none;
+            text-decoration: underline; 
+        }
+        :focus{
+            background: none;
+            text-decoration: underline;
+        }
+    }
+    .navbar .container .navbar-brand, .navbar.container-fluid .navbar-brand {
+        color: $white;
+        margin-top: 35px;
+        font-size: 30px;
+    }
+    .active{
+        text-decoration: underline;
+    }
+}
+
+.navbar-default{
+     background: $hash;
+   .navbar-nav li{
+        .active{
+            text-decoration: underline !important;
+            color: $white !important;
+        }
+        :hover{
+            background: none !important;
+            text-decoration: underline;
+            color: $white !important;
+        }
+        :focus{
+            background: none;
+            color: $white;
+            text-decoration: underline;
+        }
+        a{
+            color: $white;
+        }
+   }
+}
+
+.newsfeed{
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+.newsfeed li{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .active{
