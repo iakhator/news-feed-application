@@ -12,7 +12,7 @@ export default class App extends React.Component {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/newsfeeds" component={NewsFeeds} />
-						<Route path="/newsfeeds/:id" component={NewsHeadline} />
+						<Route path="/newsfeeds/:sourceId" component={NewsHeadline} />
 						<Route render={() => <p> Not Found </p>} />
 					</Switch>
 				</div>

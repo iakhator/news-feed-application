@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import Nav from './header/Nav';
 import NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
-//import NewsHeadline from './NewsHeadline';
 
 export default class News extends React.Component {
 	constructor(props) {
