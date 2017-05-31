@@ -5,7 +5,7 @@ export default class GoogleLogin extends React.Component {
 		return (
 			<div>
 				<button className="login">Login With Google</button>
-            </div>
+			</div>
 		);
 	}
 }
