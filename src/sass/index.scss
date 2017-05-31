@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
 
-$roboto: 'Roboto', Arial, sans-serif;
+
 $black:#333333;
 $blue: #337AB7;
 $light-blue:#245063;
@@ -8,6 +7,8 @@ $rss: #E6772D;
 $white: #ffffff;
 $google-red: #d34836;
 $hash: #2D3D44;
+$light-ash: #f7f9f9;
+$gray: #e1e1e1;
 
 *{
     padding: 0;
@@ -19,12 +20,23 @@ a{
     text-decoration: none;
 }
 
+body{background:$light-ash}
+
 ul{
     list-style-type: none;
 }
 
 .navbar-default .navbar-brand{
     color: $white;
+    :hover{
+        color: $white;
+    }
+}
+
+.container{
+    p{
+         margin-top: 55px;
+    }
 }
 
 .jumbotron{
@@ -123,4 +135,50 @@ button{
 
 .active{
     font-weight: bold;
+}
+
+.single-source{
+    margin-bottom: 20px;
+    margin-top: 70px;
+    padding: 20px;
+    .load{
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+.single{
+    background: $white;
+    border-top: 4px solid $black;
+    border-bottom: 2px solid $gray;
+    border-right: 2px solid $gray;
+    border-left: 2px solid $gray;
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 3px;
+    img{
+        width: 100%;
+        height: 300px;
+    }
+    .page-header{
+        margin-top: -8px;
+    }
+    .description{
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+    .article-details {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+    a{
+        color: $black;
+        :focus{
+            text-decoration: none !important;
+        }
+        :active{
+            text-decoration: none !important;
+        }
+    }
 }
