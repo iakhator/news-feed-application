@@ -5,13 +5,38 @@ import Nav from './header/Nav';
 import NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
 
+function Source(props) {
+	let search = props.search;
+	let newsSource = props.newsSource;
+	return (
+		<div>
+			<ul className="newsfeed">
+				{newsSource.
+					filter(
+					(sources) => {
+						return sources.name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
+					}).map(sources => (
+						<li key={sources.id}><Link to={`/newsfeeds/${sources.id}`}>{sources.name}</Link></li>
+				))}
+			</ul>
+		</div>
+	);
+}
+
+Source.PropTypes = {
+	newsSource: PropTypes.array.isRequired,
+	search: PropTypes.string.isRequired
+}
+
 export default class News extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			newsSource: NewsStore.getSources()
+			newsSource: NewsStore.getSources(),
+			search: ''
 		};
 		this.recieveSources = this.recieveSources.bind(this);
+		this.onSearch = this.onSearch.bind(this);
 	}
 
 	componentDidMount() {
@@ -27,6 +52,12 @@ export default class News extends React.Component {
 		NewsStore.on("change", this.recieveSources)
 	}
 
+	onSearch(e) {
+		this.setState({
+			search: e.target.value
+		})
+	}
+
 	recieveSources() {
 		this.setState({
 			newsSource: NewsStore.getSources()
@@ -37,19 +68,26 @@ export default class News extends React.Component {
 		return (
 			<div>
 				<Nav />
-				<div className="container">
-					<p>Welcome to my app</p>
-					<ul className="newsfeed">
-						{this.state.newsSource.map(sources => (
-							<li key={sources.id}><Link to={`/newsfeeds/${sources.id}`}>{sources.name}</Link></li>
-						))}
-					</ul>
+				<div className="container contain">
+					<div className="row">
+						<div className="col-md-10 col-md-offset-1">
+							<p className="para text-center "><i className="fa fa-newspaper-o fa-2x" aria-hidden="true" /> <span>Welcome to NewsFlash</span></p>
+							<div className="page-header">
+								<input
+									className="form-control"
+									placeholder="Search for your favourite headlines on the go..."
+									type="text"
+									value={this.state.search}
+									onChange={this.onSearch}
+								/>
+							</div>
+							<Source newsSource={this.state.newsSource} search={this.state.search} />
+						</div>
+					</div>
 				</div>
 			</div>
 		);
 	}
 }
-News.PropTypes = {
-	name: PropTypes.string.isRequired
-};
+
 
