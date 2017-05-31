@@ -86,7 +86,7 @@ export default class NewsHeadline extends React.Component {
 					<div className="row ">
 						<div className="col-md-10 col-md-offset-1">
 							<div className="single-source">
-								{!this.state.newsSource ? <p className="load">Loading...</p> : <Headline newsSource={this.state.newsSource} />}
+								{!this.state.newsSource ? <p className="load ">Loading...</p> : <Headline newsSource={this.state.newsSource} />}
 							</div>
 						</div>
 					</div>

@@ -33,9 +33,23 @@ ul{
     }
 }
 
-.container{
-    p{
-         margin-top: 55px;
+.contain{
+    background: $white;
+    padding: 10px;
+    overflow: visible;
+    border: 1px solid $gray;
+    .para{
+         margin-top: 65px;
+         margin-bottom: -20px;
+         .fa{
+             margin-right: 10px;
+         }
+         span{
+             font-size: 30px;
+         }
+    }
+    .page-header{
+        border-color: $gray;
     }
 }
 
