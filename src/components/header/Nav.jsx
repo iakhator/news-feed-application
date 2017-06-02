@@ -36,7 +36,7 @@ export default function Nav() {
 						<li className="dropdown">
 							<a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Akhator Itua<span className="caret" /></a>
 							<ul className="dropdown-menu">
-								<li><a >LogOut</a></li>
+								<li><button>LogOut</button></li>
 							</ul>
 						</li>
 					</ul>

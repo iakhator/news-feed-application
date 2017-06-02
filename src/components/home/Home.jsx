@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Auth from '../../helpers/auth';
+import AuthActions from '../../actions/AuthActions';
+import AuthStore from '../../stores/AuthStore';
 import HomeNav from './HomeNav';
 
 export default class Home extends React.Component {
@@ -13,9 +15,10 @@ export default class Home extends React.Component {
 	}
 
 	login() {
-		Auth.login().then(() => {
+		Auth.logIn().then(result => {
+			AuthActions.logIn(result.user.displayName, result.user.uid);
 			this.setState({
-				loggedIn: true
+				loggedIn: AuthStore.isAuthenticated()
 			})
 		});
 	}

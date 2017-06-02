@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Nav from './header/Nav';
 import NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
+import AuthStore from '../stores/AuthStore';
+import AuthActions from '../actions/AuthActions';
+import Auth from '../helpers/auth'
 
 function Source(props) {
 	let search = props.search;
@@ -33,15 +36,20 @@ export default class News extends React.Component {
 		super(props);
 		this.state = {
 			newsSource: NewsStore.getSources(),
-			search: ''
+			search: '',
+			isAuthenticated: AuthStore.isAuthenticated()
 		};
 		this.recieveSources = this.recieveSources.bind(this);
 		this.onSearch = this.onSearch.bind(this);
+		this.logOut = this.logOut.bind(this);
 	}
 
 	componentDidMount() {
 		NewsActions.recieveSources();
 		this.onRecieveChange();
+		if (this.state.isAuthenticated) {
+			console.log(window.localStorage.getItem('userId'))
+		}
 	}
 
 	componentWillUnmount() {
@@ -64,27 +72,40 @@ export default class News extends React.Component {
 		})
 	}
 
+	logOut() {
+		if (this.state.isAuthenticated) {
+			Auth.logOut();
+			AuthActions.logOut();
+			this.setState({
+				isAuthenticated: false
+			})
+		}
+	}
+
 	render() {
 		return (
 			<div>
-				<Nav />
-				<div className="container contain">
-					<div className="row">
-						<div className="col-md-10 col-md-offset-1">
-							<p className="para text-center "><i className="fa fa-newspaper-o fa-2x" aria-hidden="true" /> <span>Welcome to NewsFlash</span></p>
-							<div className="page-header">
-								<input
-									className="form-control"
-									placeholder="Search for your favourite headlines on the go..."
-									type="text"
-									value={this.state.search}
-									onChange={this.onSearch}
-								/>
+				{!this.state.isAuthenticated ? <Redirect to="/" /> : <div>
+					<Nav />
+					<div className="container contain">
+						<div className="row">
+							<div className="col-md-10 col-md-offset-1">
+								<p className="para text-center "><i className="fa fa-newspaper-o fa-2x" aria-hidden="true" /> <span>Welcome to NewsFlash</span></p>
+								<div className="page-header">
+									<input
+										className="form-control"
+										placeholder="Search for your favourite headlines on the go..."
+										type="text"
+										value={this.state.search}
+										onChange={this.onSearch}
+									/>
+									<button onClick={this.logOut}>logout</button>
+								</div>
+								<Source newsSource={this.state.newsSource} search={this.state.search} />
 							</div>
-							<Source newsSource={this.state.newsSource} search={this.state.search} />
 						</div>
 					</div>
-				</div>
+				</div>}
 			</div>
 		);
 	}

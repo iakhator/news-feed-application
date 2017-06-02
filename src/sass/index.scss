@@ -136,6 +136,33 @@ button{
    }
 }
 
+.dropdown-menu {
+    li{
+        color: black !important;
+        margin-right: 20px; 
+        :hover{
+            background: black !important;
+        }
+        button{
+            color: black !important;
+            margin-left: 50px;
+            background: transparent;
+            :hover{
+                color: $black !important;
+            }
+        }
+    }
+}
+
+.dropdown a{
+    :active{
+        background: none !important;
+    }
+    :focus{
+        background: none !important;
+    }
+}
+
 .newsfeed{
     display: flex !important;
     flex-wrap: wrap;

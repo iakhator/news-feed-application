@@ -3,8 +3,15 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './home/Home';
 import NewsFeeds from './NewsFeeds';
 import NewsHeadline from './NewsHeadline';
+import AuthStore from '../stores/AuthStore';
 
 export default class App extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			isAuthenticated: AuthStore.isAuthenticated()
+		}
+	}
 	render() {
 		return (
 			<Router>
