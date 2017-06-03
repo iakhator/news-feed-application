@@ -40,15 +40,11 @@ export default class News extends React.Component {
 		};
 		this.recieveSources = this.recieveSources.bind(this);
 		this.onSearch = this.onSearch.bind(this);
-		this.logOut = this.logOut.bind(this);
 	}
 
 	componentDidMount() {
 		NewsActions.recieveSources();
 		this.onRecieveChange();
-		if (this.state.isAuthenticated) {
-			console.log(window.localStorage.getItem('userId'))
-		}
 	}
 
 	componentWillUnmount() {
@@ -71,16 +67,6 @@ export default class News extends React.Component {
 		})
 	}
 
-	logOut() {
-		if (this.state.isAuthenticated) {
-			Auth.logOut();
-			AuthActions.logOut();
-			this.setState({
-				isAuthenticated: false
-			})
-		}
-	}
-
 	render() {
 		return (
 			<div>
@@ -96,7 +82,6 @@ export default class News extends React.Component {
 									value={this.state.search}
 									onChange={this.onSearch}
 								/>
-								<button onClick={this.logOut}>logout</button>
 							</div>
 							<Source newsSource={this.state.newsSource} search={this.state.search} />
 						</div>

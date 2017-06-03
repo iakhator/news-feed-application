@@ -1,6 +1,8 @@
 import { EventEmitter } from 'events';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import { firebaseAuth } from '../config/firebase-config';
+import Auth from '../helpers/auth'
+
 
 const localStorage = window.localStorage;
 
@@ -12,8 +14,10 @@ function setUser(user, userId) {
 }
 
 function deleteUser() {
-	localStorage.removeItem('user');
-	localStorage.removeItem('userId');
+	Auth.logOut().then(() => {
+		localStorage.removeItem('user');
+		localStorage.removeItem('userId');
+	})
 }
 
 class AuthStore extends EventEmitter {

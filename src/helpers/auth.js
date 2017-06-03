@@ -10,6 +10,11 @@ export default {
 	},
 
 	logOut: () => {
-		return firebaseAuth.signOut();
+		return firebaseAuth.signOut().then(() => {
+			 // Sign-out successful.
+		}).catch(function(error) {
+			// An error happened.
+			console.log(error)
+		})
 	}
 }

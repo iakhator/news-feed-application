@@ -35,22 +35,21 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			isAuthenticated: AuthStore.isAuthenticated()
+			isAuthenticated: AuthStore.isAuthenticated(),
+			displayName: ''
 		}
 		this.logIn = this.logIn.bind(this)
+		this.logOut = this.logOut.bind(this)
 	}
 
 	componentDidMount() {
 		firebaseAuth.onAuthStateChanged(user => {
 			if (user) {
-				window.localStorage.setItem('user', user.displayName);
-				window.localStorage.setItem('userId', user.uid);
 				this.setState({
-					isAuthenticated: true
+					isAuthenticated: true,
+					displayName: AuthStore.getUser()
 				});
 			}else {
-				window.localStorage.removeItem('user');
-				window.localStorage.removeItem('userId');
 				this.setState({
 					isAuthenticated: false
 				});
@@ -67,16 +66,30 @@ export default class App extends React.Component {
 		});
 	}
 
+	logOut() {
+		if (this.state.isAuthenticated) {
+			AuthActions.logOut();
+			this.setState({
+				isAuthenticated: false
+			})
+		}
+	}
+
 	render() {
 		return (
 			<Router>
 				<div>
-					<Nav authenticate={this.state.isAuthenticated} isLogin={this.logIn} />
+					<Nav
+						authenticate={this.state.isAuthenticated}
+						isLogin={this.logIn}
+						displayName={this.state.displayName}
+						isLogOut={this.logOut}
+					/>
 					<Switch>
 						<PublicRoute isAuthenticated={this.state.isAuthenticated}  exact path="/" component={Home} />
 						<PrivateRoute isAuthenticated={this.state.isAuthenticated}  exact path="/newsfeeds" component={NewsFeeds} />
 						<PrivateRoute isAuthenticated={this.state.isAuthenticated} path="/newsfeeds/:sourceId" component={NewsHeadline} />
-						<Route render={() => <p> Not Found </p>} />
+						<Route render={() => <p className="not-found">404 Not Found </p>} />
 					</Switch>
 				</div>
 			</Router>

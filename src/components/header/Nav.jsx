@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 
 export default function Nav(props) {
-	let { authenticate } = props;
+	let { authenticate, displayName, isLogin, isLogout } = props;
 	return (
 		<nav className="navbar navbar-fixed-top navbar-default ">
 			<div className="container">
@@ -35,7 +35,7 @@ export default function Nav(props) {
 					<ul className="nav navbar-nav navbar-right">
 						{!authenticate ?
 							<li>
-								<a><button onClick={props.isLogin}className="log-in">LogIn</button></a>
+								<a><button onClick={isLogin} className="log-in">LogIn</button></a>
 							</li>
 							:
 							<ul className="nav navbar-nav navbar-right">
@@ -45,9 +45,11 @@ export default function Nav(props) {
 									</NavLink>
 								</li>
 								<li className="dropdown">
-									<a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Akhator Itua<span className="caret" /></a>
+									<a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{displayName}<span className="caret" /></a>
 									<ul className="dropdown-menu">
-										<li><button>LogOut</button></li>
+										<li>
+											<a><button onClick={isLogout} className="btn">LogOut</button></a>
+										</li>
 									</ul>
 								</li>
 							</ul>
@@ -57,4 +59,10 @@ export default function Nav(props) {
 			</div>
 		</nav>
 	);
+}
+
+Nav.PropTypes = {
+	authenticate: PropTypes.bool.isRequired,
+	displayName: PropTypes.string.isRequired,
+	isLogin: PropTypes.func.isRequired
 }
