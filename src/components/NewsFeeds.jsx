@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Redirect } from 'react-router-dom'
-import Nav from './header/Nav';
+import { Link } from 'react-router-dom'
 import NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
 import AuthStore from '../stores/AuthStore';
@@ -85,27 +84,24 @@ export default class News extends React.Component {
 	render() {
 		return (
 			<div>
-				{!this.state.isAuthenticated ? <Redirect to="/" /> : <div>
-					<Nav />
-					<div className="container contain">
-						<div className="row">
-							<div className="col-md-10 col-md-offset-1">
-								<p className="para text-center "><i className="fa fa-newspaper-o fa-2x" aria-hidden="true" /> <span>Welcome to NewsFlash</span></p>
-								<div className="page-header">
-									<input
-										className="form-control"
-										placeholder="Search for your favourite headlines on the go..."
-										type="text"
-										value={this.state.search}
-										onChange={this.onSearch}
-									/>
-									<button onClick={this.logOut}>logout</button>
-								</div>
-								<Source newsSource={this.state.newsSource} search={this.state.search} />
+				<div className="container contain">
+					<div className="row">
+						<div className="col-md-10 col-md-offset-1">
+							<p className="para text-center "><i className="fa fa-newspaper-o fa-2x" aria-hidden="true" /> <span>Welcome to NewsFlash</span></p>
+							<div className="page-header">
+								<input
+									className="form-control"
+									placeholder="Search for your favourite headlines on the go..."
+									type="text"
+									value={this.state.search}
+									onChange={this.onSearch}
+								/>
+								<button onClick={this.logOut}>logout</button>
 							</div>
+							<Source newsSource={this.state.newsSource} search={this.state.search} />
 						</div>
 					</div>
-				</div>}
+				</div>
 			</div>
 		);
 	}

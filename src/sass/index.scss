@@ -39,7 +39,7 @@ ul{
     overflow: visible;
     border: 1px solid $gray;
     .para{
-         margin-top: 65px;
+         margin-top: 100px;
          margin-bottom: -20px;
          .fa{
              margin-right: 10px;
@@ -56,9 +56,10 @@ ul{
 .jumbotron{
     background: none;
     text-align: center;
+    margin-top: 70px;
     .rss{
         color: $rss;
-        font-size: 200px;
+        font-size: 180px;
     }
     .login{
         padding: 10px;
@@ -72,6 +73,9 @@ ul{
         margin-top: -15px;
         font-size: 30px;
     }
+    h2{
+        font-size: 45px;
+    }
 }
 
 button{
@@ -82,39 +86,24 @@ button{
 .home-page{
     margin-top: -20px;
     background: radial-gradient($light-blue, $black);
-     background-position: center center;
+    background-position: center center;
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-    height: 650px;
+    height: 658px;
     color:$white;
-    .navbar-nav li a{
-        margin-top: 40px;
-        color: $white;
-    }
-    .navbar-nav li {
-        :hover{
-            background: none;
-            text-decoration: underline; 
-        }
-        :focus{
-            background: none;
-            text-decoration: underline;
-        }
-    }
-    .navbar .container .navbar-brand, .navbar.container-fluid .navbar-brand {
-        color: $white;
-        margin-top: 35px;
-        font-size: 30px;
-    }
-    .active{
-        text-decoration: underline;
-    }
+}
+
+.navbar .container .navbar-brand, .navbar.container-fluid .navbar-brand {
+    color: $white;
+    font-size: 25px;
 }
 
 .navbar-default{
      background: $hash;
+     border: none;
+     padding: 12px;
    .navbar-nav li{
         .active{
             text-decoration: underline !important;
@@ -151,6 +140,14 @@ button{
                 color: $black !important;
             }
         }
+    }
+}
+
+.navbar-right button{
+    color: $white !important;
+    background: transparent;
+    :hover{
+        color: $black !important;
     }
 }
 

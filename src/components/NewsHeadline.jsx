@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Nav from './header/Nav';
 import NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
 
@@ -58,12 +57,6 @@ export default class NewsHeadline extends React.Component {
 		this.onRecieveChange();
 	}
 
-	componentWillReceiveProps(nextProps) {
-		this.setState({
-			newsSource: NewsActions.getContact(nextProps.match.params.sourceId)
-		});
-	}
-
 	componentWillUnmount() {
 		NewsStore.removeListener("change", this.recieveSource)
 	}
@@ -81,7 +74,6 @@ export default class NewsHeadline extends React.Component {
 	render() {
 		return (
 			<div>
-				<Nav />
 				<div className="container">
 					<div className="row ">
 						<div className="col-md-10 col-md-offset-1">

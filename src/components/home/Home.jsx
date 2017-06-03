@@ -2,14 +2,12 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Auth from '../../helpers/auth';
 import AuthActions from '../../actions/AuthActions';
-import AuthStore from '../../stores/AuthStore';
-import HomeNav from './HomeNav';
 
 export default class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loggedIn: false
+			isAuthenticated: false
 		}
 		this.login = this.login.bind(this);
 	}
@@ -18,25 +16,24 @@ export default class Home extends React.Component {
 		Auth.logIn().then(result => {
 			AuthActions.logIn(result.user.displayName, result.user.uid);
 			this.setState({
-				loggedIn: AuthStore.isAuthenticated()
+				isAuthenticated: true
 			})
 		});
 	}
 
 	render() {
 		return (
-			<div>
-				{this.state.loggedIn ? <Redirect to='/newsfeeds' /> : <div className="home-page">
-					<HomeNav />
+			<div className="home-page">
+				{this.state.isAuthenticated ? <Redirect to='/newsfeeds' /> : <div className="home-page">
 					<div className="col-md-8 col-md-offset-2">
 						<div className="jumbotron">
-							<h1>
+							<h2>
 								<i className="fa fa-rss rss" aria-hidden="true" />
-								<div>News Feed</div>
-							</h1>
+								<div>News Flash</div>
+							</h2>
 							<p>News Flash, Get the latest news around the globe here</p>
 							<div>
-								<button onClick={this.login} className="login">Login With Google</button>
+								<button onClick={this.login} className="login"><i className="fa fa-google-plus" aria-hidden="true" /> Login With Google</button>
 							</div>
 						</div>
 					</div>

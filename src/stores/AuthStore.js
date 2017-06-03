@@ -1,11 +1,12 @@
 import { EventEmitter } from 'events';
 import AppDispatcher from '../dispatcher/AppDispatcher';
+import { firebaseAuth } from '../config/firebase-config';
 
-const localStorage = global.localStorage;
+const localStorage = window.localStorage;
 
 function setUser(user, userId) {
 	if (!localStorage.getItem('userId')) {
-		localStorage.setItem('user', JSON.stringify(user));
+		localStorage.setItem('user', user);
 		localStorage.setItem('userId', userId);
 	}
 }
@@ -21,7 +22,8 @@ class AuthStore extends EventEmitter {
 	}
 
 	isAuthenticated() {
-		if(localStorage.getItem('userId')) {
+		let currentUser = firebaseAuth.currentUser;
+		if(currentUser || localStorage.getItem('userId')) {
 			return true;
 		}
 		return false;
