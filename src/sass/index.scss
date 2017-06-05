@@ -1,4 +1,9 @@
 
+$bgDefault      : #2d3d44;
+$bgHighlight    : #3b464b;
+$colDefault     : #ffffff;
+$colHighlight   : #ecdbff;
+$dropDown       : false;
 
 $black:#333333;
 $blue: #337AB7;
@@ -26,20 +31,13 @@ ul{
     list-style-type: none;
 }
 
-.navbar-default .navbar-brand{
-    color: $white;
-    :hover{
-        color: $white;
-    }
-}
-
 .contain{
     background: $white;
     padding: 10px;
     overflow: visible;
     border: 1px solid $gray;
     .para{
-         margin-top: 65px;
+         margin-top: 100px;
          margin-bottom: -20px;
          .fa{
              margin-right: 10px;
@@ -56,9 +54,10 @@ ul{
 .jumbotron{
     background: none;
     text-align: center;
+    margin-top: 70px;
     .rss{
         color: $rss;
-        font-size: 200px;
+        font-size: 180px;
     }
     .login{
         padding: 10px;
@@ -72,6 +71,9 @@ ul{
         margin-top: -15px;
         font-size: 30px;
     }
+    h2{
+        font-size: 45px;
+    }
 }
 
 button{
@@ -82,40 +84,42 @@ button{
 .home-page{
     margin-top: -20px;
     background: radial-gradient($light-blue, $black);
-     background-position: center center;
+    background-position: center center;
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-    height: 650px;
+    height: 658px;
     color:$white;
-    .navbar-nav li a{
-        margin-top: 40px;
-        color: $white;
-    }
-    .navbar-nav li {
-        :hover{
-            background: none;
-            text-decoration: underline; 
-        }
-        :focus{
-            background: none;
-            text-decoration: underline;
-        }
-    }
-    .navbar .container .navbar-brand, .navbar.container-fluid .navbar-brand {
-        color: $white;
-        margin-top: 35px;
-        font-size: 30px;
-    }
-    .active{
-        text-decoration: underline;
-    }
+}
+
+.navbar .container .navbar-brand, .navbar.container-fluid .navbar-brand {
+    font-size: 25px;
 }
 
 .navbar-default{
-     background: $hash;
+     border: none;
+     padding: 12px;
    .navbar-nav li{
+        margin-right: 20px; 
+        .dropdown-menu{
+            margin-top: 12px !important;
+            button{
+                color: $black !important;
+                background: none !important;
+                margin-left: 10px;
+                width:100%;
+                :hover{
+                    background: $white;
+                    color: $black !important;
+                }
+                :active{
+                    color: $black !important;
+                    outline: none !important;
+                    border: none !important;
+                }
+            }
+        }
         .active{
             text-decoration: underline !important;
             color: $white !important;
@@ -130,10 +134,15 @@ button{
             color: $white;
             text-decoration: underline;
         }
-        a{
-            color: $white;
-        }
    }
+}
+
+.navbar-right button{
+    color: $white !important;
+    background: transparent;
+    :hover{
+        color: $black !important;
+    }
 }
 
 .newsfeed{
@@ -196,3 +205,78 @@ button{
         }
     }
 }
+
+.not-found{
+    margin-top: 200px;
+    font-size: 70px;
+    text-align: center;
+}
+
+.navbar-default {
+    background-color: $bgDefault;
+    border-color: $bgHighlight;
+    .navbar-brand {
+        color: $colDefault;
+        &:hover, &:focus {
+        color: $colHighlight; }}
+    .navbar-text {
+        color: $colDefault; }
+    .navbar-nav {
+        > li {
+        > a {
+            color: $colDefault;
+            &:hover,  &:focus {
+            color: $colHighlight; }}
+    @if $dropDown {
+        > .dropdown-menu {
+        background-color: $bgDefault;
+        > li {
+            > a {
+            color: $colDefault;
+            &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            &.divider {
+            background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+        .open .dropdown-menu > .active {
+            > a, > a:hover, > a:focus {
+            color: $colHighlight;
+            background-color: $bgHighlight; }}}
+        > .active {
+            > a, > a:hover, > a:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+        > .open {
+            > a, > a:hover, > a:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}}
+    .navbar-toggle {
+        border-color: $bgHighlight;
+        &:hover, &:focus {
+            background-color: $bgHighlight; }
+        .icon-bar {
+            background-color: $colDefault; }}
+        .navbar-collapse,
+        .navbar-form {
+            border-color: $colDefault; }
+        .navbar-link {
+            color: $colDefault;
+            &:hover {
+                color: $colHighlight; 
+            }
+        }
+    }
+
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu {
+        > li > a {
+            color: $colDefault;
+            &:hover, &:focus {
+                color: $colHighlight; }}
+        > .active {
+        > a, > a:hover, > a:focus {
+            color: $colHighlight;
+            background-color: $bgHighlight; }}}
+    }
