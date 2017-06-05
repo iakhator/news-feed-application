@@ -67,8 +67,10 @@ export default class App extends React.Component {
 	}
 
 	logOut() {
+		console.log('logout');
 		if (this.state.isAuthenticated) {
 			AuthActions.logOut();
+			console.log('logout')
 			this.setState({
 				isAuthenticated: false
 			})

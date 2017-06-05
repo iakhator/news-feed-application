@@ -5,7 +5,6 @@ import NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
 import AuthStore from '../stores/AuthStore';
 import AuthActions from '../actions/AuthActions';
-import Auth from '../helpers/auth'
 
 function Source(props) {
 	let search = props.search;
@@ -18,7 +17,9 @@ function Source(props) {
 					(sources) => {
 						return sources.name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
 					}).map(sources => (
-						<li key={sources.id}><Link to={`/newsfeeds/${sources.id}`}>{sources.name}</Link></li>
+						<li key={sources.id}>
+							<Link to={`/newsfeeds/${sources.id}`}>{sources.name}</Link>
+						</li>
 				))}
 			</ul>
 		</div>
@@ -40,6 +41,7 @@ export default class News extends React.Component {
 		};
 		this.recieveSources = this.recieveSources.bind(this);
 		this.onSearch = this.onSearch.bind(this);
+		this.logOut = this.logOut.bind(this);
 	}
 
 	componentDidMount() {
@@ -67,6 +69,16 @@ export default class News extends React.Component {
 		})
 	}
 
+	logOut() {
+		if (this.state.isAuthenticated) {
+			AuthActions.logOut();
+			console.log('logout')
+			this.setState({
+				isAuthenticated: false
+			})
+		}
+	}
+
 	render() {
 		return (
 			<div>
@@ -82,6 +94,7 @@ export default class News extends React.Component {
 									value={this.state.search}
 									onChange={this.onSearch}
 								/>
+								<button onClick={this.logOut}>logout</button>
 							</div>
 							<Source newsSource={this.state.newsSource} search={this.state.search} />
 						</div>
