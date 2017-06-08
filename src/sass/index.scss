@@ -16,267 +16,267 @@ $light-ash: #f7f9f9;
 $gray: #e1e1e1;
 
 *{
-    padding: 0;
-    margin: 0;
-    font-family: ubuntu;
+	padding: 0;
+	margin: 0;
+	font-family: ubuntu;
 }
 
 a{
-    text-decoration: none;
+	text-decoration: none;
 }
 
 body{background:$light-ash}
 
 ul{
-    list-style-type: none;
+	list-style-type: none;
 }
 
 .contain{
-    background: $white;
-    padding: 10px;
-    overflow: visible;
-    border: 1px solid $gray;
-    .para{
-         margin-top: 100px;
-         margin-bottom: -20px;
-         .fa{
-             margin-right: 10px;
-         }
-         span{
-             font-size: 30px;
-         }
-    }
-    .page-header{
-        border-color: $gray;
-    }
+	background: $white;
+	padding: 10px;
+	overflow: visible;
+	border: 1px solid $gray;
+	.para{
+		 margin-top: 100px;
+		 margin-bottom: -20px;
+		 .fa{
+			 margin-right: 10px;
+		 }
+		 span{
+			 font-size: 30px;
+		 }
+	}
+	.page-header{
+		border-color: $gray;
+	}
 }
 
 .jumbotron{
-    background: none;
-    text-align: center;
-    margin-top: 70px;
-    .rss{
-        color: $rss;
-        font-size: 180px;
-    }
-    .login{
-        padding: 10px;
-        margin: 10px;
-        width: 25%;
-        font-weight: bold;
-        color: $white;
-        background: $google-red;
-    }
-    p{
-        margin-top: -15px;
-        font-size: 30px;
-    }
-    h2{
-        font-size: 45px;
-    }
+	background: none;
+	text-align: center;
+	margin-top: 70px;
+	.rss{
+		color: $rss;
+		font-size: 180px;
+	}
+	.login{
+		padding: 10px;
+		margin: 10px;
+		width: 25%;
+		font-weight: bold;
+		color: $white;
+		background: $google-red;
+	}
+	p{
+		margin-top: -15px;
+		font-size: 30px;
+	}
+	h2{
+		font-size: 45px;
+	}
 }
 
 button{
-    border: none;
-    border-radius: 3px;
+	border: none;
+	border-radius: 3px;
 }
 
 .home-page{
-    margin-top: -20px;
-    background: radial-gradient($light-blue, $black);
-    background-position: center center;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    height: 658px;
-    color:$white;
+	margin-top: -20px;
+	background: radial-gradient($light-blue, $black);
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	height: 658px;
+	color:$white;
 }
 
 .navbar .container .navbar-brand, .navbar.container-fluid .navbar-brand {
-    font-size: 25px;
+	font-size: 25px;
 }
 
 .navbar-default{
-     border: none;
-     padding: 12px;
+	 border: none;
+	 padding: 12px;
    .navbar-nav li{
-        margin-right: 20px; 
-        .dropdown-menu{
-            margin-top: 12px !important;
-            button{
-                color: $black !important;
-                background: none !important;
-                margin-left: 10px;
-                width:100%;
-                :hover{
-                    background: $white;
-                    color: $black !important;
-                }
-                :active{
-                    color: $black !important;
-                    outline: none !important;
-                    border: none !important;
-                }
-            }
-        }
-        .active{
-            text-decoration: underline !important;
-            color: $white !important;
-        }
-        :hover{
-            background: none !important;
-            text-decoration: underline;
-            color: $white !important;
-        }
-        :focus{
-            background: none;
-            color: $white;
-            text-decoration: underline;
-        }
+		margin-right: 20px; 
+		.dropdown-menu{
+			margin-top: 12px !important;
+			button{
+				color: $black !important;
+				background: none !important;
+				margin-left: 10px;
+				width:100%;
+				:hover{
+					background: $white;
+					color: $black !important;
+				}
+				:active{
+					color: $black !important;
+					outline: none !important;
+					border: none !important;
+				}
+			}
+		}
+		.active{
+			text-decoration: underline !important;
+			color: $white !important;
+		}
+		:hover{
+			background: none !important;
+			text-decoration: underline;
+			color: $white !important;
+		}
+		:focus{
+			background: none;
+			color: $white;
+			text-decoration: underline;
+		}
    }
 }
 
 .navbar-right button{
-    color: $white !important;
-    background: transparent;
-    :hover{
-        color: $black !important;
-    }
+	color: $white !important;
+	background: transparent;
+	:hover{
+		color: $black !important;
+	}
 }
 
 .newsfeed{
-    display: flex !important;
-    flex-wrap: wrap;
+	display: flex !important;
+	flex-wrap: wrap;
 }
 
 .newsfeed li{
-    margin-right: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 
 .active{
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .single-source{
-    margin-bottom: 20px;
-    margin-top: 70px;
-    padding: 20px;
-    .load{
-        text-align: center;
-        font-size: 30px;
-    }
+	margin-bottom: 20px;
+	margin-top: 70px;
+	padding: 20px;
+	.load{
+		text-align: center;
+		font-size: 30px;
+	}
 }
 
 .single{
-    background: $white;
-    border-top: 4px solid $black;
-    border-bottom: 2px solid $gray;
-    border-right: 2px solid $gray;
-    border-left: 2px solid $gray;
-    margin-bottom: 20px;
-    padding: 25px;
-    border-radius: 3px;
-    img{
-        width: 100%;
-        height: 300px;
-    }
-    .page-header{
-        margin-top: -8px;
-    }
-    .description{
-        font-size: 17px;
-        margin-bottom: 5px;
-    }
-    .article-details {
-        margin-top: 10px;
-        margin-bottom: 20px;
-        font-style: italic;
-    }
-    a{
-        color: $black;
-        :focus{
-            text-decoration: none !important;
-        }
-        :active{
-            text-decoration: none !important;
-        }
-    }
+	background: $white;
+	border-top: 4px solid $black;
+	border-bottom: 2px solid $gray;
+	border-right: 2px solid $gray;
+	border-left: 2px solid $gray;
+	margin-bottom: 20px;
+	padding: 25px;
+	border-radius: 3px;
+	img{
+		width: 100%;
+		height: 300px;
+	}
+	.page-header{
+		margin-top: -8px;
+	}
+	.description{
+		font-size: 17px;
+		margin-bottom: 5px;
+	}
+	.article-details {
+		margin-top: 10px;
+		margin-bottom: 20px;
+		font-style: italic;
+	}
+	a{
+		color: $black;
+		:focus{
+			text-decoration: none !important;
+		}
+		:active{
+			text-decoration: none !important;
+		}
+	}
 }
 
 .not-found{
-    margin-top: 200px;
-    font-size: 70px;
-    text-align: center;
+	margin-top: 200px;
+	font-size: 70px;
+	text-align: center;
 }
 
 .navbar-default {
-    background-color: $bgDefault;
-    border-color: $bgHighlight;
-    .navbar-brand {
-        color: $colDefault;
-        &:hover, &:focus {
-        color: $colHighlight; }}
-    .navbar-text {
-        color: $colDefault; }
-    .navbar-nav {
-        > li {
-        > a {
-            color: $colDefault;
-            &:hover,  &:focus {
-            color: $colHighlight; }}
-    @if $dropDown {
-        > .dropdown-menu {
-        background-color: $bgDefault;
-        > li {
-            > a {
-            color: $colDefault;
-            &:hover,  &:focus {
-                color: $colHighlight;
-                background-color: $bgHighlight; }}
-            &.divider {
-            background-color: $bgHighlight;}}}}}
-    @if $dropDown {
-        .open .dropdown-menu > .active {
-            > a, > a:hover, > a:focus {
-            color: $colHighlight;
-            background-color: $bgHighlight; }}}
-        > .active {
-            > a, > a:hover, > a:focus {
-                color: $colHighlight;
-                background-color: $bgHighlight; }}
-        > .open {
-            > a, > a:hover, > a:focus {
-                color: $colHighlight;
-                background-color: $bgHighlight; }}}
-    .navbar-toggle {
-        border-color: $bgHighlight;
-        &:hover, &:focus {
-            background-color: $bgHighlight; }
-        .icon-bar {
-            background-color: $colDefault; }}
-        .navbar-collapse,
-        .navbar-form {
-            border-color: $colDefault; }
-        .navbar-link {
-            color: $colDefault;
-            &:hover {
-                color: $colHighlight; 
-            }
-        }
-    }
+	background-color: $bgDefault;
+	border-color: $bgHighlight;
+	.navbar-brand {
+		color: $colDefault;
+		&:hover, &:focus {
+		color: $colHighlight; }}
+	.navbar-text {
+		color: $colDefault; }
+	.navbar-nav {
+		> li {
+		> a {
+			color: $colDefault;
+			&:hover,  &:focus {
+			color: $colHighlight; }}
+	@if $dropDown {
+		> .dropdown-menu {
+		background-color: $bgDefault;
+		> li {
+			> a {
+			color: $colDefault;
+			&:hover,  &:focus {
+				color: $colHighlight;
+				background-color: $bgHighlight; }}
+			&.divider {
+			background-color: $bgHighlight;}}}}}
+	@if $dropDown {
+		.open .dropdown-menu > .active {
+			> a, > a:hover, > a:focus {
+			color: $colHighlight;
+			background-color: $bgHighlight; }}}
+		> .active {
+			> a, > a:hover, > a:focus {
+				color: $colHighlight;
+				background-color: $bgHighlight; }}
+		> .open {
+			> a, > a:hover, > a:focus {
+				color: $colHighlight;
+				background-color: $bgHighlight; }}}
+	.navbar-toggle {
+		border-color: $bgHighlight;
+		&:hover, &:focus {
+			background-color: $bgHighlight; }
+		.icon-bar {
+			background-color: $colDefault; }}
+		.navbar-collapse,
+		.navbar-form {
+			border-color: $colDefault; }
+		.navbar-link {
+			color: $colDefault;
+			&:hover {
+				color: $colHighlight; 
+			}
+		}
+	}
 
 
 @media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu {
-        > li > a {
-            color: $colDefault;
-            &:hover, &:focus {
-                color: $colHighlight; }}
-        > .active {
-        > a, > a:hover, > a:focus {
-            color: $colHighlight;
-            background-color: $bgHighlight; }}}
-    }
+	.navbar-default .navbar-nav .open .dropdown-menu {
+		> li > a {
+			color: $colDefault;
+			&:hover, &:focus {
+				color: $colHighlight; }}
+		> .active {
+		> a, > a:hover, > a:focus {
+			color: $colHighlight;
+			background-color: $bgHighlight; }}}
+	}

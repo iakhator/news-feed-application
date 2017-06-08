@@ -10,7 +10,7 @@ module.exports = {
         "window": true
     }, 
     "rules": {
-        "linebreak-style": ["error", process.env.NODE_ENV === 'prod' ? "unix" : "windows"],
+        "linebreak-style": ["error", process.env.NODE_ENV === 'prod' ? "unix" : "unix"],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/prefer-stateless-function": [0],
         "react/jsx-indent": [2, "tab"],
