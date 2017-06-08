@@ -33,24 +33,13 @@ export default function Nav(props) {
 						}
 					</ul>
 					<ul className="nav navbar-nav navbar-right">
-						{!authenticate ?
-							<li>
-								<a><button onClick={isLogin} className="log-in">LogIn</button></a>
-							</li>
-							:
+						{authenticate &&
 							<ul className="nav navbar-nav navbar-right">
 								<li>
-									<NavLink activeClassName="active" to="/favourite">
-										Favourite
-									</NavLink>
+									<a>{displayName}</a>
 								</li>
-								<li className="dropdown">
-									<a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{displayName}<span className="caret" /></a>
-									<ul className="dropdown-menu">
-										<li>
-											<a><button onClick={isLogout} className="btn">LogOut</button></a>
-										</li>
-									</ul>
+								<li>
+									<a><button onClick={isLogout} className="btn">LogOut</button></a>
 								</li>
 							</ul>
 						}

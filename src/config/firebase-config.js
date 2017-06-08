@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 
-  // Initialize Firebase
+ // Initialize Firebase
 const config = {
 	apiKey: "AIzaSyDhs8AHmc5d8wumLXaIpeQWG8JFbvQg8vc",
 	authDomain: "newsapi-92675.firebaseapp.com",
@@ -9,6 +9,7 @@ const config = {
 	storageBucket: "newsapi-92675.appspot.com",
 	messagingSenderId: "1044626272706"
 };
+
 firebase.initializeApp(config);
 
 export const ref = firebase.database().ref();

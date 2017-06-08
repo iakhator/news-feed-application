@@ -81,7 +81,7 @@ export default class News extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="body">
 				<div className="container contain">
 					<div className="row">
 						<div className="col-md-10 col-md-offset-1">

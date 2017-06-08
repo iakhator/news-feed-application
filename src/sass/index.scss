@@ -102,24 +102,6 @@ button{
 	 padding: 12px;
    .navbar-nav li{
 		margin-right: 20px; 
-		.dropdown-menu{
-			margin-top: 12px !important;
-			button{
-				color: $black !important;
-				background: none !important;
-				margin-left: 10px;
-				width:100%;
-				:hover{
-					background: $white;
-					color: $black !important;
-				}
-				:active{
-					color: $black !important;
-					outline: none !important;
-					border: none !important;
-				}
-			}
-		}
 		.active{
 			text-decoration: underline !important;
 			color: $white !important;

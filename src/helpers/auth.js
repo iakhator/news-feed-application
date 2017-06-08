@@ -6,6 +6,8 @@ export default {
 			// const token = result.credential.accessToken;
 			// const user = result.user;
 			return result;
+		}).catch((error) => {
+			console.log(error.code);
 		});
 	},
 
