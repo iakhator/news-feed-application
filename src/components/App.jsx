@@ -5,8 +5,6 @@ import NewsFeeds from './NewsFeeds';
 import Nav from './header/Nav';
 import NewsHeadline from './NewsHeadline';
 import AuthStore from '../stores/AuthStore';
-import AuthActions from '../actions/AuthActions';
-import Auth from '../helpers/auth';
 import { firebaseAuth } from '../config/firebase-config';
 
 function PrivateRoute ({component: Component, isAuthenticated, ...rest}) {
@@ -15,12 +13,12 @@ function PrivateRoute ({component: Component, isAuthenticated, ...rest}) {
 			{...rest}
 			render={(props) => isAuthenticated === true
 			? <Component {...props} />
-			: <Redirect to={{pathname: '/', state: {from: props.location}}} />}
+			: <Redirect to={{pathname: '/', state: { from: props.location } }} />}
 		/>
 	)
 }
 
-function PublicRoute ({component: Component, isAuthenticated, ...rest}) {
+function PublicRoute ({component: Component, isAuthenticated, ...rest }) {
 	return (
 		<Route
 			{...rest}
@@ -38,8 +36,6 @@ export default class App extends React.Component {
 			isAuthenticated: AuthStore.isAuthenticated(),
 			displayName: ''
 		}
-		this.logIn = this.logIn.bind(this)
-		this.logOut = this.logOut.bind(this)
 	}
 
 	componentDidMount() {
@@ -47,7 +43,7 @@ export default class App extends React.Component {
 			if (user) {
 				this.setState({
 					isAuthenticated: true,
-					displayName: AuthStore.getUser()
+					displayName: user.displayName
 				});
 			}else {
 				this.setState({
@@ -57,39 +53,18 @@ export default class App extends React.Component {
 		})
 	}
 
-	logIn() {
-		Auth.logIn().then(result => {
-			AuthActions.logIn(result.user.displayName, result.user.uid);
-			this.setState({
-				isAuthenticated: true
-			})
-		});
-	}
-
-	logOut() {
-		if (this.state.isAuthenticated) {
-			AuthActions.logOut();
-			console.log('logout')
-			this.setState({
-				isAuthenticated: false
-			})
-		}
-	}
-
 	render() {
 		return (
 			<Router>
 				<div>
 					<Nav
 						authenticate={this.state.isAuthenticated}
-						isLogin={this.logIn}
 						displayName={this.state.displayName}
-						isLogOut={this.logOut}
 					/>
 					<Switch>
 						<PublicRoute isAuthenticated={this.state.isAuthenticated}  exact path="/" component={Home} />
 						<PrivateRoute isAuthenticated={this.state.isAuthenticated}  exact path="/newsfeeds" component={NewsFeeds} />
-						<PrivateRoute isAuthenticated={this.state.isAuthenticated} path="/newsfeeds/:sourceId" component={NewsHeadline} />
+						<PrivateRoute isAuthenticated={this.state.isAuthenticated} exact path="/newsfeeds/:sourceId/:sortBy" component={NewsHeadline} />
 						<Route render={() => <p className="not-found">404 Not Found </p>} />
 					</Switch>
 				</div>

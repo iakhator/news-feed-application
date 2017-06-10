@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import NewsActions from '../actions/NewsActions';
-import NewsStore from '../stores/NewsStore';
+import ArtclesStore from '../stores/ArticlesStore';
 
 function Headline(props) {
-	let newsSource = props.newsSource;
+	const {newsArticle} = props;
 	return (
 		<div>
-			{newsSource.map((article) => {
+			{newsArticle.map((article) => {
 				return (
 					<div className="single" key={article.title}>
 						<h3 className="page-header">
@@ -40,34 +40,34 @@ function Headline(props) {
 }
 
 Headline.PropTypes = {
-	newsSource: PropTypes.array.isRequired
+	newsArticle: PropTypes.array.isRequired
 }
 
 export default class NewsHeadline extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			newsSource: null
+			newsArticle: null
 		};
 		this.recieveSource = this.recieveSource.bind(this);
 	}
 
 	componentDidMount() {
-		NewsActions.getSource(this.props.match.params.sourceId);
+		NewsActions.getArticle(this.props.match.params.sourceId, this.props.match.params.sortBy);
 		this.onRecieveChange();
 	}
 
 	componentWillUnmount() {
-		NewsStore.removeListener("change", this.recieveSource)
+		ArtclesStore.removeListener("change", this.recieveSource)
 	}
 
 	onRecieveChange() {
-		NewsStore.on("change", this.recieveSource)
+		ArtclesStore.on("change", this.recieveSource)
 	}
 
 	recieveSource() {
 		this.setState({
-			newsSource: NewsStore.getSource(this.props.match.params.sourceId)
+			newsArticle: ArtclesStore.getArticle()
 		})
 	}
 
@@ -78,7 +78,7 @@ export default class NewsHeadline extends React.Component {
 					<div className="row ">
 						<div className="col-md-10 col-md-offset-1">
 							<div className="single-source">
-								{!this.state.newsSource ? <p className="load ">Loading...</p> : <Headline newsSource={this.state.newsSource} />}
+								{!this.state.newsArticle ? <p className="load ">Loading...</p> : <Headline newsArticle={this.state.newsArticle} />}
 							</div>
 						</div>
 					</div>

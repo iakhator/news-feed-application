@@ -1,30 +1,27 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import Auth from '../../helpers/auth';
 import AuthActions from '../../actions/AuthActions';
+
 
 export default class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			isAuthenticated: false
-		}
+		};
 		this.login = this.login.bind(this);
 	}
 
 	login() {
-		Auth.logIn().then(result => {
-			AuthActions.logIn(result.user.displayName, result.user.uid);
-			this.setState({
-				isAuthenticated: true
-			})
+		AuthActions.logIn();
+		this.setState({
+			isAuthenticated: true
 		});
 	}
 
 	render() {
 		return (
 			<div className="home-page">
-				{this.state.isAuthenticated ? <Redirect to='/newsfeeds' /> : <div className="home-page">
+				<div className="home-page">
 					<div className="col-md-8 col-md-offset-2">
 						<div className="jumbotron">
 							<h2>
@@ -38,7 +35,6 @@ export default class Home extends React.Component {
 						</div>
 					</div>
 				</div>
-			}
 			</div>
 		);
 	}
