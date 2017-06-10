@@ -5,7 +5,6 @@ class NewsStore extends EventEmitter {
 	constructor(props) {
 		super(props);
 		this.newsSources = [];
-		this.newsSource = [];
 	}
 
 	setSources(sources) {
@@ -13,26 +12,14 @@ class NewsStore extends EventEmitter {
 		this.emit('change');
 	}
 
-	setSource(singleSource) {
-		this.newsSource = singleSource;
-		this.emit('change');
-	}
-
 	getSources() {
 		return this.newsSources;
-	}
-
-	getSource() {
-		return this.newsSource;
 	}
 
 	handleActions(action) {
 		switch (action.type) {
 			case "RECIEVE_SOURCES":
 				this.setSources(action.sources);
-				break;
-			case "RECIEVE_SOURCE":
-				this.setSource(action.singleSource);
 				break;
 		}
 	}

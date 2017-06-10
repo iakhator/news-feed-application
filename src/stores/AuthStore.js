@@ -6,23 +6,29 @@ import Auth from '../helpers/auth'
 
 const localStorage = window.localStorage;
 
-function setUser(user, userId) {
-	if (!localStorage.getItem('userId')) {
-		localStorage.setItem('user', user);
-		localStorage.setItem('userId', userId);
-	}
-}
-
-function deleteUser() {
-	Auth.logOut().then(() => {
-		localStorage.removeItem('user');
-		localStorage.removeItem('userId');
-	})
-}
-
 class AuthStore extends EventEmitter {
 	constructor(props) {
 		super(props);
+	}
+
+	setUser() {
+		Auth.logIn();
+		Auth.auth().then(function(result) {
+			const user = result.user;
+			const userId = result.uid;
+			if (!localStorage.getItem('userId')) {
+				localStorage.setItem('user', user);
+				localStorage.setItem('userId', userId);
+			}
+		}).catch(function(error) {
+			localStorage.setItem('message', error)
+		});
+	}
+
+	deleteUser() {
+		Auth.logOut();
+		localStorage.removeItem('user');
+		localStorage.removeItem('userId');
 	}
 
 	isAuthenticated() {
@@ -33,19 +39,14 @@ class AuthStore extends EventEmitter {
 		return false;
 	}
 
-	getUser() {
-	    return localStorage.getItem('user')
-	}
-
-
 	handleAuthActions(action) {
 		switch (action.type) {
 			case "AUTH_LOGIN":
-				setUser(action.user, action.token);
+				this.setUser();
 				this.emit('change');
 				break;
 			case "AUTH_LOGOUT":
-				deleteUser();
+				this.deleteUser();
 				this.emit('change');
 				break;
 		}
