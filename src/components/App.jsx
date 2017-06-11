@@ -29,7 +29,7 @@ function PublicRoute ({component: Component, isAuthenticated, ...rest }) {
 	)
 }
 
-export default class App extends React.Component {
+class App extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -72,4 +72,6 @@ export default class App extends React.Component {
 		);
 	}
 }
+
+export default App;
 

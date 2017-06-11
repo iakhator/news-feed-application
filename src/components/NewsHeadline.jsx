@@ -43,7 +43,7 @@ Headline.PropTypes = {
 	newsArticle: PropTypes.array.isRequired
 }
 
-export default class NewsHeadline extends React.Component {
+class NewsHeadline extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -87,3 +87,5 @@ export default class NewsHeadline extends React.Component {
 		);
 	}
 }
+
+export default NewsHeadline;
