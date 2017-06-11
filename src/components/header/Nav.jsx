@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AuthActions from '../../actions/AuthActions';
 
-export default class Nav extends React.Component {
+class Nav extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state= {
@@ -42,7 +42,7 @@ export default class Nav extends React.Component {
 								<li>
 									<NavLink exact activeClassName="active" to="/">
 										Home
-								</NavLink>
+									</NavLink>
 								</li>
 								:
 								<li>
@@ -70,6 +70,8 @@ export default class Nav extends React.Component {
 		);
 	}
 }
+
+export default Nav;
 
 Nav.PropTypes = {
 	authenticate: PropTypes.bool.isRequired,
