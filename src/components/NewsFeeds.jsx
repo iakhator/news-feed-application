@@ -53,7 +53,7 @@ Source.PropTypes = {
 	search: PropTypes.string.isRequired
 }
 
-export default class News extends React.Component {
+class News extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -120,5 +120,7 @@ export default class News extends React.Component {
 		);
 	}
 }
+
+export default News;
 
 

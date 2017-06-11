@@ -7,8 +7,8 @@ class ArticlesStore extends EventEmitter {
 		this.newsArticle = [];
 	}
 
-	setArticle(singleSource) {
-		this.newsArticle = singleSource;
+	setArticle(article) {
+		this.newsArticle = article;
 		this.emit('change');
 	}
 
@@ -19,7 +19,7 @@ class ArticlesStore extends EventEmitter {
 	handleActions(action) {
 		switch (action.type) {
 			case "RECIEVE_ARTICLE":
-				this.setArticle(action.singleSource);
+				this.setArticle(action.article);
 				break;
 		}
 	}

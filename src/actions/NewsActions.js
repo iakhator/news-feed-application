@@ -16,9 +16,9 @@ class NewsActions {
 
 	getArticle(sourceId, sortBy) {
 		NewsApi.getNews(`https://newsapi.org/v1/articles?source=${sourceId}&sortBy=${sortBy}&apiKey=213327409d384371851777e7c7f78dfe`)
-			.then(singleSource => AppDispatcher.dispatch({
+			.then(article => AppDispatcher.dispatch({
 				type: "RECIEVE_ARTICLE",
-				singleSource
+				article
 			}))
 			.catch(message => AppDispatcher.dispatch({
 				type: "RECIEVE_ARTICLE_ERROR",
