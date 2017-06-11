@@ -4,24 +4,46 @@ import { Link } from 'react-router-dom'
 import NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
 import AuthStore from '../stores/AuthStore';
-import AuthActions from '../actions/AuthActions';
 
+/**
+ *
+ * @param {*} props
+ */
 function Source(props) {
 	let search = props.search;
 	let newsSource = props.newsSource;
 	return (
-		<div>
-			<ul className="newsfeed">
-				{newsSource.
-					filter(
-					(sources) => {
-						return sources.name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
-					}).map(sources => (
-						<li key={sources.id}>
-							<Link to={`/newsfeeds/${sources.id}`}>{sources.name}</Link>
-						</li>
-				))}
-			</ul>
+		<div className="row">
+			<div className="col-md-10 col-md-offset-1">
+				<div className="newsfeed">
+					{newsSource.
+						filter(
+						(sources) => {
+							return sources.name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
+						}).map(sources => (
+							<div className="news-sources" key={sources.id}>
+								<h3 className="page-header">{sources.name}</h3>
+								<ul className="desc">
+									<li>
+										<i className="fa fa-star" aria-hidden="true" />
+										{sources.description}
+									</li>
+								</ul>
+								{sources.sortBysAvailable.map((sortBy) => {
+									return(
+										<div key={sortBy}>
+											<ul className="sort pull-right">
+												<li>
+													<Link to={`/newsfeeds/${sources.id}/${sortBy}`}>{sortBy}</Link>
+												</li>
+											</ul>
+										</div>
+									)
+								})}
+							</div>
+					))}
+				</div>
+			</div>
 		</div>
 	);
 }
@@ -31,7 +53,7 @@ Source.PropTypes = {
 	search: PropTypes.string.isRequired
 }
 
-export default class News extends React.Component {
+class News extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -41,7 +63,6 @@ export default class News extends React.Component {
 		};
 		this.recieveSources = this.recieveSources.bind(this);
 		this.onSearch = this.onSearch.bind(this);
-		this.logOut = this.logOut.bind(this);
 	}
 
 	componentDidMount() {
@@ -69,16 +90,6 @@ export default class News extends React.Component {
 		})
 	}
 
-	logOut() {
-		if (this.state.isAuthenticated) {
-			AuthActions.logOut();
-			console.log('logout')
-			this.setState({
-				isAuthenticated: false
-			})
-		}
-	}
-
 	render() {
 		return (
 			<div className="body">
@@ -86,7 +97,7 @@ export default class News extends React.Component {
 					<div className="row">
 						<div className="col-md-10 col-md-offset-1">
 							<p className="para text-center "><i className="fa fa-newspaper-o fa-2x" aria-hidden="true" /> <span>Welcome to NewsFlash</span></p>
-							<div className="page-header">
+							<div className="page-header col-md-10 col-md-offset-1">
 								<input
 									className="form-control"
 									placeholder="Search for your favourite headlines on the go..."
@@ -94,9 +105,14 @@ export default class News extends React.Component {
 									value={this.state.search}
 									onChange={this.onSearch}
 								/>
-								<button onClick={this.logOut}>logout</button>
 							</div>
-							<Source newsSource={this.state.newsSource} search={this.state.search} />
+							<div>
+								{!this.state.newsSource ? <p className="load">Loading...</p>
+								:<Source
+									newsSource={this.state.newsSource}
+									search={this.state.search}
+								/>}
+							</div>
 						</div>
 					</div>
 				</div>
@@ -104,5 +120,7 @@ export default class News extends React.Component {
 		);
 	}
 }
+
+export default News;
 
 
