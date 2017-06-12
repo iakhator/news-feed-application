@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1497242192277" clover="3.2.0">
-  <project timestamp="1497242192278" name="All files">
-    <metrics statements="19" coveredstatements="14" conditionals="6" coveredconditionals="4" methods="8" coveredmethods="6" elements="33" coveredelements="24" complexity="0" loc="19" ncloc="19" packages="5" files="5" classes="5">
+<coverage generated="1497243104515" clover="3.2.0">
+  <project timestamp="1497243104515" name="All files">
+    <metrics statements="19" coveredstatements="14" conditionals="6" coveredconditionals="2" methods="8" coveredmethods="6" elements="33" coveredelements="22" complexity="0" loc="19" ncloc="19" packages="5" files="5" classes="5">
       <package name="src">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="history.js" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/history.js">
@@ -18,18 +18,18 @@
         </file>
       </package>
       <package name="src.components.header">
-        <metrics statements="10" coveredstatements="6" conditionals="6" coveredconditionals="4" methods="3" coveredmethods="2"/>
+        <metrics statements="10" coveredstatements="6" conditionals="6" coveredconditionals="2" methods="3" coveredmethods="2"/>
         <file name="Nav.jsx" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/components/header/Nav.jsx">
-          <metrics statements="10" coveredstatements="6" conditionals="6" coveredconditionals="4" methods="3" coveredmethods="2"/>
-          <line num="9" count="7" type="stmt"/>
-          <line num="10" count="7" type="stmt"/>
-          <line num="13" count="7" type="stmt"/>
+          <metrics statements="10" coveredstatements="6" conditionals="6" coveredconditionals="2" methods="3" coveredmethods="2"/>
+          <line num="9" count="2" type="stmt"/>
+          <line num="10" count="2" type="stmt"/>
+          <line num="13" count="2" type="stmt"/>
           <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="18" count="0" type="stmt"/>
           <line num="19" count="0" type="stmt"/>
           <line num="22" count="0" type="stmt"/>
-          <line num="27" count="7" type="stmt"/>
-          <line num="28" count="7" type="stmt"/>
+          <line num="27" count="2" type="stmt"/>
+          <line num="28" count="2" type="stmt"/>
           <line num="77" count="1" type="stmt"/>
         </file>
       </package>
