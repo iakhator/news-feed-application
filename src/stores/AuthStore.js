@@ -14,12 +14,8 @@ class AuthStore extends EventEmitter {
 	setUser() {
 		Auth.logIn();
 		Auth.auth().then(function(result) {
-			const user = result.user;
-			const userId = result.uid;
-			if (!localStorage.getItem('userId')) {
-				localStorage.setItem('user', user);
-				localStorage.setItem('userId', userId);
-			}
+			localStorage.setItem('user', result.displayName);
+			localStorage.setItem('userId', result.uid);
 		}).catch(function(error) {
 			localStorage.setItem('message', error)
 		});
@@ -32,7 +28,7 @@ class AuthStore extends EventEmitter {
 	}
 
 	isAuthenticated() {
-		let currentUser = firebaseAuth.currentUser;
+		const currentUser = firebaseAuth.currentUser;
 		if(currentUser || localStorage.getItem('userId')) {
 			return true;
 		}
