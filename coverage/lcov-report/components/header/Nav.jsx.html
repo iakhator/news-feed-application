@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">11.11% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/9</span>
+        <span class='fraction'>1/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/6</span>
+        <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/3</span>
+        <span class='fraction'>0/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">11.11% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/9</span>
+        <span class='fraction'>1/9</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -129,11 +129,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,8 +147,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,12 +207,12 @@ import PropTypes from 'prop-types';
 import AuthActions from '../../actions/AuthActions';
 &nbsp;
 class Nav extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state= {
+<span class="fstat-no" title="function not covered" >	co</span>nstructor(props) {
+<span class="cstat-no" title="statement not covered" >		super(props)</span>
+<span class="cstat-no" title="statement not covered" >		this.state= {</span>
 			isAuthenticated: true
 		}
-		this.logOut = this.logOut.bind(this);
+<span class="cstat-no" title="statement not covered" >		this.logOut = this.logOut.bind(this);</span>
 	}
 &nbsp;
 <span class="fstat-no" title="function not covered" >	lo</span>gOut() {
@@ -225,9 +225,9 @@ class Nav extends React.Component {
 		}
 	}
 &nbsp;
-	render() {
-		const {authenticate, displayName} = this.props
-		return (
+<span class="fstat-no" title="function not covered" >	re</span>nder() {
+		const {authenticate, displayName} = <span class="cstat-no" title="statement not covered" >this.props</span>
+<span class="cstat-no" title="statement not covered" >		return (</span>
 			&lt;nav className="navbar navbar-fixed-top navbar-default "&gt;
 				&lt;div className="container"&gt;
 					&lt;div className="navbar-header"&gt;
@@ -248,7 +248,7 @@ class Nav extends React.Component {
 									&lt;/NavLink&gt;
 								&lt;/li&gt;
 								:
-<span class="branch-1 cbranch-no" title="branch not covered" >								&lt;li&gt;</span>
+								&lt;li&gt;
 									&lt;NavLink activeClassName="active" to="/newsfeeds"&gt;
 										NewsFeeds
 									&lt;/NavLink&gt;
@@ -257,7 +257,7 @@ class Nav extends React.Component {
 						&lt;/ul&gt;
 						&lt;ul className="nav navbar-nav navbar-right"&gt;
 							{authenticate &amp;&amp;
-<span class="branch-1 cbranch-no" title="branch not covered" >								&lt;ul className="nav navbar-nav navbar-right"&gt;</span>
+								&lt;ul className="nav navbar-nav navbar-right"&gt;
 									&lt;li&gt;
 										&lt;a&gt;{displayName}&lt;/a&gt;
 									&lt;/li&gt;
@@ -278,7 +278,7 @@ export default Nav;
 &nbsp;
 Nav.PropTypes = {
 	authenticate: PropTypes.bool.isRequired,
-	displayName: PropTypes.string.isRequired,
+	displayName: PropTypes.string
 }
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -286,7 +286,7 @@ Nav.PropTypes = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jun 11 2017 07:51:06 GMT+0100 (WAT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jun 12 2017 03:04:04 GMT+0100 (WAT)
 </div>
 </div>
 <script src="../../prettify.js"></script>

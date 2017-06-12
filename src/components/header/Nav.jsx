@@ -75,5 +75,5 @@ export default Nav;
 
 Nav.PropTypes = {
 	authenticate: PropTypes.bool.isRequired,
-	displayName: PropTypes.string.isRequired,
+	displayName: PropTypes.string
 }
