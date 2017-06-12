@@ -1,17 +1,18 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 
-export default {
-	logIn: (user, token) => {
+class AuthActions {
+	logIn(){
 		AppDispatcher.dispatch({
 			type: "AUTH_LOGIN",
-			user,
-			token
 		})
-	},
+	}
 
-	logOut: () => {
+	logOut() {
 		AppDispatcher.dispatch({
 			type: "AUTH_LOGOUT"
 		})
 	}
-};
+}
+
+const authActions = new AuthActions();
+export default authActions;

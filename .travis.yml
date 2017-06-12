@@ -1,3 +1,4 @@
 language: node_js		  
 node_js: "stable"
-script: npm run test
+test: "npm test --coverage"
+after_success: "cat ./coverage/lcov.info | coveralls"

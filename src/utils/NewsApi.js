@@ -1,9 +1,16 @@
 import axios from 'axios';
 
-export default {
-	getNewsSource: url => axios.get(url)
-		.then(source => source.data.sources),
+class NewsApi {
+	getNewsSource(url) {
+		return axios.get(url)
+		.then(source => source.data.sources)
+	}
 
-	getNews: url => axios.get(url)
+	getNews(url) {
+		return axios.get(url)
 		.then(source => source.data.articles)
-};
+	}
+}
+
+const newsApi = new NewsApi();
+export default newsApi;
