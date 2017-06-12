@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount , render } from 'enzyme';
-import TestUtils from 'react-addons-test-utils';
 import Home from '../../components/home/Home';
 
 describe('Home', () => {

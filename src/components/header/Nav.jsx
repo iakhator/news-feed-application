@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import history from '../../history';
 import AuthActions from '../../actions/AuthActions';
 
 class Nav extends React.Component {
@@ -15,15 +16,15 @@ class Nav extends React.Component {
 	logOut() {
 		if (this.state.isAuthenticated) {
 			AuthActions.logOut();
-
 			this.setState({
 				isAuthenticated: false
 			})
+			history.push('/');
 		}
 	}
 
 	render() {
-		const {authenticate, displayName} = this.props
+		const {authenticate, displayName} = this.props;
 		return (
 			<nav className="navbar navbar-fixed-top navbar-default ">
 				<div className="container">
@@ -59,7 +60,7 @@ class Nav extends React.Component {
 										<a>{displayName}</a>
 									</li>
 									<li>
-										<a href="" onClick={this.logOut}>LogOut</a>
+										<a id="log-out" href="" onClick={this.logOut}>LogOut</a>
 									</li>
 								</ul>
 							}
