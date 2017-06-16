@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <coverage generated="1497601482007" clover="3.2.0">
   <project timestamp="1497601482007" name="All files">
     <metrics statements="90" coveredstatements="72" conditionals="12" coveredconditionals="6" methods="48" coveredmethods="33" elements="150" coveredelements="111" complexity="0" loc="90" ncloc="90" packages="10" files="13" classes="13">

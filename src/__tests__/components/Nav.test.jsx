@@ -11,9 +11,11 @@ describe('Nav', () => {
   }
   const container = shallow(<Nav {...props}/>);
 
+
   it('renders without crashing', () => {
     shallow(<Nav />);
   });
+
 
   it('logOut should be defined', () => {
       expect(container.instance().logOut).toBeDefined();
