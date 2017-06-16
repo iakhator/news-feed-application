@@ -2,12 +2,12 @@ import firebase from 'firebase';
 
  // Initialize Firebase
 const config = {
-	apiKey: "AIzaSyDhs8AHmc5d8wumLXaIpeQWG8JFbvQg8vc",
-	authDomain: "newsapi-92675.firebaseapp.com",
-	databaseURL: "https://newsapi-92675.firebaseio.com",
-	projectId: "newsapi-92675",
-	storageBucket: "newsapi-92675.appspot.com",
-	messagingSenderId: "1044626272706"
+	apiKey:process.env.APIKEY,
+	authDomain:process.env.AUTHDOMAIN,
+	databaseURL:process.env.DATABASEURL,
+	projectId:process.env.PROJECTID,
+	storageBucket:process.env.STORAGEBUCKET,
+	messagingSenderId:process.env.MESSENGINGSENDER
 };
 
 firebase.initializeApp(config);

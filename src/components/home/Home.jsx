@@ -1,20 +1,22 @@
 import React from 'react';
-import AuthActions from '../../actions/AuthActions';
-
+import Auth from '../../helpers/auth';
 
 class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isAuthenticated: false
+			isAuthenticated: false,
+			user : ''
 		};
 		this.login = this.login.bind(this);
 	}
 
 	login() {
-		AuthActions.logIn();
-		this.setState({
-			isAuthenticated: true
+		Auth.logIn().then((user) => {
+			this.setState({
+				isAuthenticated: true,
+				user: user
+			});
 		});
 	}
 

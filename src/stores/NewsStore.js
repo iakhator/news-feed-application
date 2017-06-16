@@ -2,14 +2,13 @@ import { EventEmitter } from 'events';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 
 class NewsStore extends EventEmitter {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.newsSources = [];
 	}
 
 	setSources(sources) {
 		this.newsSources = sources;
-		this.emit('change');
 	}
 
 	getSources() {
@@ -20,6 +19,7 @@ class NewsStore extends EventEmitter {
 		switch (action.type) {
 			case "RECIEVE_SOURCES":
 				this.setSources(action.sources);
+				this.emit('change');
 				break;
 		}
 	}

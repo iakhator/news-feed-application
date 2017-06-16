@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1497243104515" clover="3.2.0">
-  <project timestamp="1497243104515" name="All files">
-    <metrics statements="19" coveredstatements="14" conditionals="6" coveredconditionals="2" methods="8" coveredmethods="6" elements="33" coveredelements="22" complexity="0" loc="19" ncloc="19" packages="5" files="5" classes="5">
+<coverage generated="1497601482007" clover="3.2.0">
+  <project timestamp="1497601482007" name="All files">
+    <metrics statements="90" coveredstatements="72" conditionals="12" coveredconditionals="6" methods="48" coveredmethods="33" elements="150" coveredelements="111" complexity="0" loc="90" ncloc="90" packages="10" files="13" classes="13">
       <package name="src">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="history.js" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/history.js">
@@ -9,12 +9,60 @@
         </file>
       </package>
       <package name="src.actions">
-        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <file name="AuthActions.js" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/actions/AuthActions.js">
-          <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-          <line num="5" count="1" type="stmt"/>
+        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+        <file name="NewsActions.js" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/actions/NewsActions.js">
+          <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+          <line num="6" count="6" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="11" count="3" type="stmt"/>
+          <line num="18" count="2" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="30" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components">
+        <metrics statements="32" coveredstatements="24" conditionals="4" coveredconditionals="2" methods="19" coveredmethods="11"/>
+        <file name="Headline.jsx" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/components/Headline.jsx">
+          <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="8" count="2" type="stmt"/>
           <line num="11" count="0" type="stmt"/>
+          <line num="42" count="2" type="stmt"/>
+        </file>
+        <file name="NewsFeeds.jsx" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/components/NewsFeeds.jsx">
+          <metrics statements="19" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="11" coveredmethods="6"/>
+          <line num="12" count="4" type="stmt"/>
+          <line num="13" count="4" type="stmt"/>
+          <line num="14" count="4" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="50" count="1" type="stmt"/>
+          <line num="57" count="4" type="stmt"/>
+          <line num="58" count="4" type="stmt"/>
+          <line num="63" count="4" type="stmt"/>
+          <line num="64" count="4" type="stmt"/>
+          <line num="68" count="3" type="stmt"/>
+          <line num="69" count="3" type="stmt"/>
+          <line num="70" count="3" type="stmt"/>
+          <line num="74" count="0" type="stmt"/>
+          <line num="78" count="3" type="stmt"/>
+          <line num="82" count="1" type="stmt"/>
+          <line num="88" count="0" type="stmt"/>
+          <line num="94" count="6" type="stmt"/>
+        </file>
+        <file name="NewsHeadline.jsx" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/components/NewsHeadline.jsx">
+          <metrics statements="9" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="4"/>
+          <line num="8" count="2" type="stmt"/>
+          <line num="9" count="2" type="stmt"/>
+          <line num="12" count="2" type="stmt"/>
+          <line num="16" count="2" type="stmt"/>
           <line num="17" count="2" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="25" count="2" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="35" count="2" type="stmt"/>
         </file>
       </package>
       <package name="src.components.header">
@@ -34,21 +82,83 @@
         </file>
       </package>
       <package name="src.components.home">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <file name="Home.jsx" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/components/home/Home.jsx">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+          <line num="6" count="7" type="stmt"/>
           <line num="7" count="7" type="stmt"/>
-          <line num="8" count="7" type="stmt"/>
           <line num="11" count="7" type="stmt"/>
           <line num="15" count="1" type="stmt"/>
           <line num="16" count="1" type="stmt"/>
-          <line num="22" count="8" type="stmt"/>
+          <line num="24" count="8" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.config">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="firebase-config.js" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/config/firebase-config.js">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="4" count="2" type="stmt"/>
+          <line num="13" count="2" type="stmt"/>
+          <line num="15" count="2" type="stmt"/>
+          <line num="16" count="2" type="stmt"/>
         </file>
       </package>
       <package name="src.dispatcher">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="AppDispatcher.js" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/dispatcher/AppDispatcher.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="src.helpers">
+        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <file name="auth.js" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/helpers/auth.js">
+          <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="18" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.stores">
+        <metrics statements="20" coveredstatements="20" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="8"/>
+        <file name="ArticlesStore.js" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/stores/ArticlesStore.js">
+          <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="16" count="2" type="stmt"/>
+          <line num="20" count="2" type="cond" truecount="1" falsecount="0"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="28" count="2" type="stmt"/>
+          <line num="29" count="2" type="stmt"/>
+        </file>
+        <file name="NewsStore.js" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/stores/NewsStore.js">
+          <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="15" count="6" type="stmt"/>
+          <line num="19" count="4" type="cond" truecount="1" falsecount="0"/>
+          <line num="21" count="1" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="28" count="2" type="stmt"/>
+          <line num="29" count="2" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.utils">
+        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <file name="NewsApi.js" path="/Users/andeladeveloper/Documents/projects/news-feed-application/src/utils/NewsApi.js">
+          <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+          <line num="5" count="6" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="10" count="2" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="15" count="2" type="stmt"/>
         </file>
       </package>
     </metrics>

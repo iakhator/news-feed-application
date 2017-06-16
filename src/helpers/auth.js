@@ -1,20 +1,19 @@
 import { firebaseAuth, provider } from '../config/firebase-config';
 
-export default {
-	logIn: () => {
+class Auth {
+	logIn() {
 		firebaseAuth.signInWithRedirect(provider);
-	},
-
-	auth: () => {
-		return firebaseAuth.getRedirectResult().then(function(result) {
-			return result;
+		return firebaseAuth.getRedirectResult().then((result) => {
+			return result.user;
 		}).catch(function(error) {
-			console.log(error)
+			return error;
 		});
+	}
 
-	},
-
-	logOut: () => {
+	logOut() {
 		return firebaseAuth.signOut();
 	}
 }
+
+const auth = new Auth()
+export default auth;

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import history from '../../history';
-import AuthActions from '../../actions/AuthActions';
+import Auth from '../../helpers/auth';
 
 class Nav extends React.Component {
 	constructor(props) {
@@ -15,7 +15,7 @@ class Nav extends React.Component {
 
 	logOut() {
 		if (this.state.isAuthenticated) {
-			AuthActions.logOut();
+			Auth.logOut();
 			this.setState({
 				isAuthenticated: false
 			})
