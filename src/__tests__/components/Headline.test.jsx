@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow, mount , render } from 'enzyme';
 import Headline from '../../components/Headline';
 

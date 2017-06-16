@@ -3,28 +3,29 @@ import ReactDOM from 'react-dom';
 import { shallow, mount , render } from 'enzyme';
 import Home from '../../components/home/Home';
 
+jest.unmock('../../helpers/auth');
+
 describe('Home', () => {
+  const container = shallow(<Home/>);
+  
   it('renders without crashing', () => {
-    mount(<Home/>);
+    mount(<Home />);
   });
 
   it('Should have an initial isAuthenticated state', () => {
-    const container = mount(<Home/>);
     expect(container.node.state.isAuthenticated).toBe(false);
   });
 
   it('Should have a function to login', () => {
-    const container = shallow(<Home/>);
     container.instance().login();
   });
 
   it('Should render <div /> tags', () => {
-    const container = mount(<Home/>);
     expect(container.find('div').toExist);
   });
 
   it('Should be selectable by class page-header', () => {
-    expect(shallow(<Home />).is('.home-page')).toBe(true);
+    expect(container.is('.home-page')).toBe(true);
   });
 
   it('should mount in a full DOM', function() {

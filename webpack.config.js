@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
 
 module.exports = {
 	entry: ['./src/index.js', './src/sass/index.scss'],
@@ -34,6 +35,16 @@ module.exports = {
 		new ExtractTextPlugin({ // define where to save the file
       filename: 'css/index.bundle.css',
       allChunks: true,
+    }),
+		new webpack.DefinePlugin({
+      'process.env': {
+        API_KEY: JSON.stringify(process.env.API_KEY),
+        AUTH_DOMAIN: JSON.stringify(process.env.AUTH_DOMAIN),
+        DATABASE_URL: JSON.stringify(process.env.DATABASE_URL),
+        PROJECT_ID: JSON.stringify(process.env.PROJECT_ID),
+        STORAGE_BUCKET: JSON.stringify(process.env.STORAGE_BUCKET),
+        MESSENGING_SENDER_ID: JSON.stringify(process.env.MESSENGING_SENDER_ID),
+      }
     })
 		]
 };
