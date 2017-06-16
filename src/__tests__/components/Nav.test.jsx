@@ -6,6 +6,7 @@ import sinon from 'sinon';
 import Nav from '../../components/header/Nav';
 
 describe('Nav', () => {
+<<<<<<< HEAD
   // let nav;
   // let authenticate;
   // let spy;
@@ -15,11 +16,18 @@ describe('Nav', () => {
   //   authenticate = jest.fn();
   //   nav = mount(<BrowserRouter><Nav authenticate={authenticate} /></BrowserRouter>);
   // });
+=======
+  const props = {
+    isAuthenticated: true
+  }
+  const container = shallow(<Nav {...props}/>);
+>>>>>>> news-tests
 
   it('renders without crashing', () => {
-    mount(<BrowserRouter><Nav /></BrowserRouter>);
+    shallow(<Nav />);
   });
 
+<<<<<<< HEAD
   it('Should check the length og "nav" tag', () => {
     const container = mount(<BrowserRouter><Nav /></BrowserRouter>);
     expect(container.find('nav').length).toEqual(1);
@@ -35,4 +43,13 @@ describe('Nav', () => {
   //   container.find('a').last().simulate('click');
   //   expect(spy).toHaveBeenCalled()
   // });
+=======
+  it('logOut should be defined', () => {
+      expect(container.instance().logOut).toBeDefined();
+		});
+
+  it('update isAuthenticated state', () => {
+    expect(container.state().isAuthenticated).toBe(true);
+  });
+>>>>>>> news-tests
 });

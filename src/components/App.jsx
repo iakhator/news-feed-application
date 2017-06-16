@@ -5,7 +5,6 @@ import Home from './home/Home';
 import NewsFeeds from './NewsFeeds';
 import Nav from './header/Nav';
 import NewsHeadline from './NewsHeadline';
-import AuthStore from '../stores/AuthStore';
 import { firebaseAuth } from '../config/firebase-config';
 
 function PrivateRoute ({component: Component, isAuthenticated, ...rest}) {
@@ -34,7 +33,7 @@ class App extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			isAuthenticated: AuthStore.isAuthenticated(),
+			isAuthenticated: true,
 			displayName: ''
 		}
 	}

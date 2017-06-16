@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 import NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
-import AuthStore from '../stores/AuthStore';
 
 /**
  *
@@ -59,7 +58,7 @@ class News extends React.Component {
 		this.state = {
 			newsSource: NewsStore.getSources(),
 			search: '',
-			isAuthenticated: AuthStore.isAuthenticated()
+			isAuthenticated: false
 		};
 		this.recieveSources = this.recieveSources.bind(this);
 		this.onSearch = this.onSearch.bind(this);
@@ -67,11 +66,12 @@ class News extends React.Component {
 
 	componentDidMount() {
 		NewsActions.recieveSources();
+		NewsActions.recieveSources();
 		this.onRecieveChange();
 	}
 
 	componentWillUnmount() {
-		NewsStore.removeListener("change", this.recieveSources)
+		NewsStore.removeListener("change", this.recieveSources);
 	}
 
 	onRecieveChange() {
@@ -122,5 +122,3 @@ class News extends React.Component {
 }
 
 export default News;
-
-
