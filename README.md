@@ -45,7 +45,7 @@ User have to sign in before it can be use.
 ## Contributions
  Contributions are always welcome. If you are interested in enhancing the features in the project, follow these steps:
  * Fork the project to your repository then clone it to your local machine.
- * Create a new branch and make the necessary enhancement to the features.
+ * Create a new branch and make features that will enhance it.
  * If the you wish to update an existing enhancement submit a pull request.
  * If you need clarity of what is not clear, contact me.
 
