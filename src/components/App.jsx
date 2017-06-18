@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-import history from '../history';
 import Home from './home/Home';
 import NewsFeeds from './NewsFeeds';
 import Nav from './header/Nav';
@@ -55,7 +54,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router history={history}>
+      <Router>
         <div>
           <Nav
             authenticate={this.state.isAuthenticated}

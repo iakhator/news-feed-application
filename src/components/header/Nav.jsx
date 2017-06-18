@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import history from '../../history';
 import Auth from '../../helpers/auth';
 
 
 /**
  * The Nav class displays the navigation in
  * all components
+ * @class Nav
  */
 class Nav extends React.Component {
 
@@ -33,7 +33,7 @@ class Nav extends React.Component {
       this.setState({
         isAuthenticated: false
       })
-      history.push('/');
+      //history.push('/');
     }
   }
 

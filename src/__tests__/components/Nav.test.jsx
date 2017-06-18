@@ -7,7 +7,6 @@ describe('Nav', () => {
   const props = {
     isAuthenticated: true
   }
-  const container = shallow(<Nav {...props}/>);
 
   it('renders without crashing', () => {
     shallow(<Nav />);
@@ -15,14 +14,20 @@ describe('Nav', () => {
 
 
   it('logOut should be defined', () => {
+    const logOut = jest.fn()
+    logOut();
+    expect(logOut).toBeDefined();
+  });
 
-    //  if(container.state().isAuthenticated === true){
-    //    container.setState({ isAuthenticated: false });
-    //    expect(container.state().isAuthenticated).toBe(false)
-    //  }
+  it('logOut', () => {
+    const spy = jest.spyOn(Nav.prototype, 'logOut');
+    const container = shallow(<Nav {...props}/>);
+    container.instance().logOut();
+    expect(spy).toHaveBeenCalled();
   });
 
   it('update isAuthenticated state', () => {
-  expect(container.state().isAuthenticated).toBe(true);
+    const container = shallow(<Nav {...props}/>);
+    expect(container.state().isAuthenticated).toBe(true);
   });
 })
