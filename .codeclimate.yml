@@ -6,4 +6,4 @@ engines:
        javascript:
          mass_threshold: 20
          exclude_paths:
-           - “__test__/”
+           - “src/__tests__/”

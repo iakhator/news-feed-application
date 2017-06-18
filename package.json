@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npm run build && node server.js",
     "test": "jest --coverage",
-    "build": "webpack -p",
-    "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",

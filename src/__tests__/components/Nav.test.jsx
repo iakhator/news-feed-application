@@ -15,6 +15,7 @@ describe('Nav', () => {
 
 
   it('logOut should be defined', () => {
+      const logOut = jest.spyOn('Nav', logOut)
       expect(container.instance().logOut).toBeDefined();
 		});
 

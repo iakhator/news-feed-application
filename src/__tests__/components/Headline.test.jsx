@@ -8,6 +8,6 @@ describe('NewsHeadline', () => {
   }
   const container = mount(<Headline {...props}/>);
   it('renders without crashing', () => {
-    mount(<Headline newsArticle={props.newsArticle}/>);
+    shallow(<Headline newsArticle={props.newsArticle}/>);
   });
 });
