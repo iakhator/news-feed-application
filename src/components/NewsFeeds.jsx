@@ -3,7 +3,18 @@ import Sources from './Sources.jsx';
 import NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
 
+/**
+ * The News component renders the sources gotten from the news Api
+ * @class News
+ * @extends {React.Component}
+ */
 class News extends React.Component {
+
+  /**
+   * The constructor set the initial state and 
+   * bind methods
+   * @param {*} props 
+   */
   constructor(props) {
     super(props);
     this.state = {
@@ -14,9 +25,13 @@ class News extends React.Component {
     this.recieveSources = this.recieveSources.bind(this);
     this.onSearch = this.onSearch.bind(this);
   }
-
+  
+  /**
+   * This function mounts recievesources action when 
+   * it is about to be rendered to the DOM
+   *
+   */
   componentDidMount() {
-    NewsActions.recieveSources();
     NewsActions.recieveSources();
     this.onRecieveChange();
   }

@@ -4,7 +4,17 @@ import PropTypes from 'prop-types';
 import history from '../../history';
 import Auth from '../../helpers/auth';
 
+
+/**
+ * The Nav class displays the navigation in
+ * all components
+ */
 class Nav extends React.Component {
+
+  /**
+   * Initalizes states and binds the logOut methods
+   * @param {*} props 
+   */
   constructor(props) {
     super(props)
     this.state= {
@@ -13,6 +23,10 @@ class Nav extends React.Component {
     this.logOut = this.logOut.bind(this);
   }
 
+  /**
+   * The logout method initialize the signing out of
+   * the user and also set the state
+   */
   logOut() {
     if (this.state.isAuthenticated) {
       Auth.logOut();
@@ -23,6 +37,11 @@ class Nav extends React.Component {
     }
   }
 
+  /**
+   * This method renders output as HTML using JSX.
+   * It renders the navigation bar
+   * @return {void}
+   */
   render() {
     const {authenticate, displayName} = this.props;
     return (

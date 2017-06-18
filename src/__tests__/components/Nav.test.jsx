@@ -14,12 +14,15 @@ describe('Nav', () => {
   });
 
 
-  // it('logOut should be defined', () => {
-  //     const logOut = jest.spyOn('Nav', logOut)
-  //     expect(container.instance().logOut).toBeDefined();
-	// 	});
+  it('logOut should be defined', () => {
+
+    //  if(container.state().isAuthenticated === true){
+    //    container.setState({ isAuthenticated: false });
+    //    expect(container.state().isAuthenticated).toBe(false)
+    //  }
+  });
 
   it('update isAuthenticated state', () => {
-    expect(container.state().isAuthenticated).toBe(true);
-    });
+  expect(container.state().isAuthenticated).toBe(true);
+  });
 })

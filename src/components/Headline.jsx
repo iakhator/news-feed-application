@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+/**
+ * The Headline function is a stateless function
+ * That displays the required article based on the sort value
+ * @param {*} props 
+ */
 function Headline(props) {
   const {newsArticle} = props;
   return (
