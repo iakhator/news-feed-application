@@ -9,31 +9,33 @@ import Auth from '../../helpers/auth';
  * all components
  * @class Nav
  */
-class Nav extends React.Component {
+class NavBar extends React.Component {
 
   /**
-   * Initalizes states and binds the logOut methods
-   * @param {*} props 
+   * Initalize state and bind the logOut methods
+   * @constructor
+   * @param {string|bolean} props
+   * @memberof NavBar
    */
   constructor(props) {
-    super(props)
-    this.state= {
+    super(props);
+    this.state = {
       isAuthenticated: true
-    }
+    };
     this.logOut = this.logOut.bind(this);
   }
 
   /**
-   * The logout method initialize the signing out of
+   *Initialize the signing out of
    * the user and also set the state
+   * @memberof NavBar
    */
   logOut() {
     if (this.state.isAuthenticated) {
       Auth.logOut();
       this.setState({
         isAuthenticated: false
-      })
-      //history.push('/');
+      });
     }
   }
 
@@ -43,16 +45,16 @@ class Nav extends React.Component {
    * @return {void}
    */
   render() {
-    const {authenticate, displayName} = this.props;
+    const { authenticate, displayName } = this.props;
     return (
       <nav className="navbar navbar-fixed-top navbar-default ">
         <div className="container">
           <div className="navbar-header">
-            <button 
-              type="button" 
-              className="navbar-toggle collapsed" 
-              data-toggle="collapse" 
-              data-target="#bs-example-navbar-collapse-1" 
+            <button
+              type="button"
+              className="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1"
               aria-expanded="false"
             >
               <span className="sr-only">Toggle navigation</span>
@@ -64,7 +66,7 @@ class Nav extends React.Component {
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
-              {!authenticate 
+              {!authenticate
               ? <li>
                 <NavLink exact activeClassName="active" to="/">
                     Home
@@ -96,9 +98,9 @@ class Nav extends React.Component {
   }
 }
 
-export default Nav;
+export default NavBar;
 
-Nav.PropTypes = {
+NavBar.PropTypes = {
   authenticate: PropTypes.bool.isRequired,
   displayName: PropTypes.string.required
-}
+};

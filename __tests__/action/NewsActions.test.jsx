@@ -1,5 +1,5 @@
-import NewsActions from '../../actions/NewsActions';
-import AppDispatcher from '../../dispatcher/AppDispatcher';
+import * as NewsActions from '../../src/actions/NewsActions';
+import AppDispatcher from '../../src/dispatcher/AppDispatcher';
 
 
 const articles = [

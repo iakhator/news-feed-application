@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Sources from '../../components/Sources';
+import Sources from '../../src/components/Sources';
 
 const props = {
   newsSource: [

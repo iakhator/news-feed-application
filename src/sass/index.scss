@@ -16,288 +16,301 @@ $light-ash: #f7f9f9;
 $gray: #e1e1e1;
 
 *{
-	padding: 0;
-	margin: 0;
-	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue, sans-serif;
 }
 
 a{
-	text-decoration: none;
+  text-decoration: none;
 }
-
-body{background:$light-ash}
 
 ul{
-	list-style-type: none;
+  list-style-type: none;
 }
 
-.body{
-	background: $white;
+.source-body{
+  background: $white !important;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
 }
 
 .contain{
-	padding: 10px;
-	overflow: visible;
-	.para{
-		 margin-top: 100px;
-		 margin-bottom: -20px;
-		 .fa{
-			 margin-right: 10px;
-		 }
-		 span{
-			 font-size: 30px;
-		 }
-	}
-	.page-header{
-		border-color: $gray;
-	}
+  padding: 10px;
+  overflow: visible;
+  .news-source{
+     margin-top: 100px;
+     margin-bottom: -20px;
+     .fa{
+       margin-right: 10px;
+     }
+     span{
+       font-size: 30px;
+     }
+  }
+  .page-header{
+    border-color: $gray;
+  }
 }
 
 .jumbotron{
-	background: none;
-	text-align: center;
-	margin-top: 90px;
-	.rss{
-		color: $rss;
-		font-size: 180px;
-	}
-	.login{
-		padding: 10px;
-		margin: 10px;
-		width: 25%;
-		font-weight: bold;
-		color: $white;
-		background: $google-red;
-	}
-	p{
-		margin-top: -15px;
-		font-size: 30px;
-	}
-	h2{
-		font-size: 45px;
-	}
+  background: none;
+  text-align: center;
+  margin-top: 90px;
+  .rss{
+    color: $rss;
+    font-size: 180px;
+  }
+  .login{
+    padding: 10px;
+    margin: 10px;
+    width: 25%;
+    font-weight: bold;
+    color: $white;
+    background: $google-red;
+  }
+  p{
+    margin-top: -15px;
+    font-size: 30px;
+  }
+  h2{
+    font-size: 45px;
+  }
 }
 
 button{
-	border: none;
-	border-radius: 3px;
+  border: none;
+  border-radius: 3px;
 }
 
 .home-page{
-	background: radial-gradient($light-blue, $black);
-	background-position: center center;
-	background-attachment: fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-	margin-top: -40px;
-	height: 770px;
-	color:$white;
+  background: radial-gradient($light-blue, $black);
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  margin-top: -40px;
+  height: 770px;
+  color:$white;
 }
 
 .navbar .container .navbar-brand, .navbar.container-fluid .navbar-brand {
-	font-size: 25px;
+  font-size: 25px;
 }
 
 .navbar-default{
-	 border: none;
+   border: none;
    .navbar-nav li{
-		 a{
-			 cursor: pointer;
-		 }
-		margin-right: 20px; 
-		.active{
-			text-decoration: underline !important;
-			color: $white !important;
-		}
-		:hover{
-			background: none !important;
-			text-decoration: underline;
-			color: $white !important;
-		}
-		:focus{
-			background: none;
-			color: $white;
-			text-decoration: underline;
-		}
+     a{
+       cursor: pointer;
+     }
+    margin-right: 20px; 
+    .active{
+      text-decoration: underline !important;
+      color: $white !important;
+    }
+    :hover{
+      background: none !important;
+      text-decoration: underline;
+      color: $white !important;
+    }
+    :focus{
+      background: none;
+      color: $white;
+      text-decoration: underline;
+    }
    }
 }
 
 .navbar-right button{
-	color: $white !important;
-	background: transparent;
-	:hover{
-		color: $black !important;
-	}
+  color: $white !important;
+  background: transparent;
+  :hover{
+    color: $black !important;
+  }
 }
 
 .newsfeed{
-	// display: flex !important;
-	// flex-wrap: wrap;
-	color: $black;
+  color: $black;
 }
 
 .news-sources{
-	background: $light-ash;
-	border: 1px solid $gray;
-	padding: 10px;
-	margin-bottom: 5px;
-	overflow: auto;
-	border-radius: 3px;
-	h3{
-		margin-top: -7px;
-		font-weight: bold;
-	}
-	a{
-		margin: 5px;
-	}
-	.desc{
-		margin-top: -10px;
-		margin-bottom: 5px;
-	}
-	.fa-star{
-		margin-right: 5px;
-	}
+  background: $light-ash;
+  border: 1px solid $gray;
+  padding: 10px;
+  margin-bottom: 10px;
+  overflow: auto;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  
+  h3{
+    margin-top: -7px;
+    font-weight: bold;
+  }
+  a{
+    margin: 5px;
+  }
+  .desc{
+    margin-top: -10px;
+    margin-bottom: 5px;
+  }
+  .fa-star{
+    margin-right: 5px;
+  }
 }
 
 .sort{
-		display: inline-block;
-		overflow: auto;
-		li{
-			display: inline;
-			flex-wrap: wrap;
-			a{
-				background: $hash;
-				color: $white;
-				padding: 10px;
-				padding-top: 10px;
-				border-radius: 3px;
-			}
-		}
-	}
+    display: inline-block;
+    overflow: auto;
+    li{
+      display: inline;
+      flex-wrap: wrap;
+      a{
+        background: $hash;
+        color: $white;
+        padding: 10px;
+        padding-top: 10px;
+        border-radius: 3px;
+      }
+    }
+  }
 
+.load{
+  text-align: center;
+  font-size: 30px;
+}
 
 .active{
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .single-source{
-	margin-bottom: 20px;
-	margin-top: 70px;
-	padding: 20px;
-	.load{
-		text-align: center;
-		font-size: 30px;
-	}
+  margin-bottom: 20px;
+  margin-top: 70px;
+  padding: 20px;
+  .load{
+    text-align: center;
+    font-size: 30px;
+  }
 }
 
 .single{
-	background: $white;
-	border-top: 4px solid $black;
-	border-bottom: 2px solid $gray;
-	border-right: 2px solid $gray;
-	border-left: 2px solid $gray;
-	margin-bottom: 20px;
-	padding: 25px;
-	border-radius: 3px;
-	img{
-		width: 100%;
-		height: 350px;
-	}
-	.page-header{
-		margin-top: -8px;
-	}
-	.description{
-		font-size: 17px;
-		margin-bottom: 5px;
-	}
-	.article-details {
-		margin-top: 10px;
-		margin-bottom: 20px;
-		font-style: italic;
-	}
-	a{
-		color: $black;
-		:focus{
-			text-decoration: none !important;
-		}
-		:active{
-			text-decoration: none !important;
-		}
-	}
+  background: $white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-top: 4px solid $black;
+  border-bottom: 2px solid $gray;
+  border-right: 2px solid $gray;
+  border-left: 2px solid $gray;
+  margin-bottom: 20px;
+  padding: 25px;
+  border-radius: 3px;
+  img{
+    width: 100%;
+    height: 350px;
+  }
+  .page-header{
+    margin-top: -8px;
+  }
+  .description{
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+  .article-details {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  a{
+    color: $black;
+    :focus{
+      text-decoration: none !important;
+    }
+    :active{
+      text-decoration: none !important;
+    }
+  }
 }
 
-.not-found{
-	margin-top: 200px;
-	font-size: 70px;
-	text-align: center;
+.not-found, .error{
+  margin-top: 200px;
+  font-size: 70px;
+  text-align: center;
+}
+
+.article-title{
+ margin-top: -20px;
+ margin-bottom: 10px;
 }
 
 .navbar-default {
-	background-color: $bgDefault;
-	border-color: $bgHighlight;
-	.navbar-brand {
-		color: $colDefault;
-		&:hover, &:focus {
-		color: $colHighlight; }}
-	.navbar-text {
-		color: $colDefault; }
-	.navbar-nav {
-		> li {
-		> a {
-			color: $colDefault;
-			&:hover,  &:focus {
-			color: $colHighlight; }}
-	@if $dropDown {
-		> .dropdown-menu {
-		background-color: $bgDefault;
-		> li {
-			> a {
-			color: $colDefault;
-			&:hover,  &:focus {
-				color: $colHighlight;
-				background-color: $bgHighlight; }}
-			&.divider {
-			background-color: $bgHighlight;}}}}}
-	@if $dropDown {
-		.open .dropdown-menu > .active {
-			> a, > a:hover, > a:focus {
-			color: $colHighlight;
-			background-color: $bgHighlight; }}}
-		> .active {
-			> a, > a:hover, > a:focus {
-				color: $colHighlight;
-				background-color: $bgHighlight; }}
-		> .open {
-			> a, > a:hover, > a:focus {
-				color: $colHighlight;
-				background-color: $bgHighlight; }}}
-	.navbar-toggle {
-		border-color: $bgHighlight;
-		&:hover, &:focus {
-			background-color: $bgHighlight; }
-		.icon-bar {
-			background-color: $colDefault; }}
-		.navbar-collapse,
-		.navbar-form {
-			border-color: $colDefault; }
-		.navbar-link {
-			color: $colDefault;
-			&:hover {
-				color: $colHighlight; 
-			}
-		}
-	}
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+    color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+    > a {
+      color: $colDefault;
+      &:hover,  &:focus {
+      color: $colHighlight; }}
+  @if $dropDown {
+    > .dropdown-menu {
+    background-color: $bgDefault;
+    > li {
+      > a {
+      color: $colDefault;
+      &:hover,  &:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+      &.divider {
+      background-color: $bgHighlight;}}}}}
+  @if $dropDown {
+    .open .dropdown-menu > .active {
+      > a, > a:hover, > a:focus {
+      color: $colHighlight;
+      background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+    .navbar-collapse,
+    .navbar-form {
+      border-color: $colDefault; }
+    .navbar-link {
+      color: $colDefault;
+      &:hover {
+        color: $colHighlight; 
+      }
+    }
+  }
 
 
 @media (max-width: 767px) {
-	.navbar-default .navbar-nav .open .dropdown-menu {
-		> li > a {
-			color: $colDefault;
-			&:hover, &:focus {
-				color: $colHighlight; }}
-		> .active {
-		> a, > a:hover, > a:focus {
-			color: $colHighlight;
-			background-color: $bgHighlight; }}}
-	}
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+    > a, > a:hover, > a:focus {
+      color: $colHighlight;
+      background-color: $bgHighlight; }}}
+  }

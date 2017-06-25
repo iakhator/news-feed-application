@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, mount , render } from 'enzyme';
-import NewsFeeds from '../../components/NewsFeeds';
-import NewsActions from '../../actions/NewsActions';
-import NewsStore from '../../stores/NewsStore';
+import NewsFeeds from '../../src/components/NewsFeeds';
+import * as NewsActions from '../../src/actions/NewsActions';
+import NewsStore from '../../src/stores/NewsStore';
 
 describe('NewsFeeds', () => {
 

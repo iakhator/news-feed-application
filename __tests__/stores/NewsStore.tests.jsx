@@ -1,7 +1,7 @@
-import NewsStore from '../../stores/NewsStore';
-import AppDispatcher from '../../dispatcher/AppDispatcher';
+import NewsStore from '../../src/stores/NewsStore';
+import AppDispatcher from '../../src/dispatcher/AppDispatcher';
 
-jest.mock('../../dispatcher/AppDispatcher');
+jest.mock('../../src/dispatcher/AppDispatcher');
 const mockDispatcher = AppDispatcher.register.mock.calls[0][0];
 
 const sourcesAction = {

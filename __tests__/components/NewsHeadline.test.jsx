@@ -1,9 +1,9 @@
 import React from 'react';
 import sinon from 'sinon';
 import { shallow, mount , render } from 'enzyme';
-import NewsHeadline from '../../components/NewsHeadline';
-import NewsActions from '../../actions/NewsActions';
-import ArticlesStore from '../../stores/ArticlesStore';
+import NewsHeadline from '../../src/components/NewsHeadline';
+import * as NewsActions from '../../src/actions/NewsActions';
+import ArticlesStore from '../../src/stores/ArticlesStore';
 
 describe('NewsHeadline', () => {
   const props = {

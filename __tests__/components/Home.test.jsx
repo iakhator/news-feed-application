@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow, mount , render } from 'enzyme';
-import Home from '../../components/home/Home';
+import Home from '../../src/components/home/Home';
 
 const props = {
   isAuthenticated: false,

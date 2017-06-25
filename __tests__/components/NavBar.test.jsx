@@ -1,15 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow, mount , render } from 'enzyme';
-import Nav from '../../components/header/Nav';
+import NavBar from '../../src/components/header/NavBar';
 
-describe('Nav', () => {
+describe('NavBar', () => {
   const props = {
     isAuthenticated: true
   }
 
   it('renders without crashing', () => {
-    shallow(<Nav />);
+    shallow(<NavBar />);
   });
 
 
@@ -20,14 +19,14 @@ describe('Nav', () => {
   });
 
   it('logOut', () => {
-    const spy = jest.spyOn(Nav.prototype, 'logOut');
-    const container = shallow(<Nav {...props}/>);
+    const spy = jest.spyOn(NavBar.prototype, 'logOut');
+    const container = shallow(<NavBar {...props}/>);
     container.instance().logOut();
     expect(spy).toHaveBeenCalled();
   });
 
   it('update isAuthenticated state', () => {
-    const container = shallow(<Nav {...props}/>);
+    const container = shallow(<NavBar {...props}/>);
     expect(container.state().isAuthenticated).toBe(true);
   });
 })

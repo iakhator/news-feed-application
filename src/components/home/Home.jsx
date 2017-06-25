@@ -1,25 +1,45 @@
 import React from 'react';
 import Auth from '../../helpers/auth';
 
+/**
+ * The Starting page of the app
+ * @class Home
+ * @extends {React.Component}
+ */
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
+
+  /**
+   * Creates an instance of Home.
+   * @memberof Home
+   */
+  constructor() {
+    super();
     this.state = {
       isAuthenticated: false,
-      user : ''
+      user: ''
     };
     this.login = this.login.bind(this);
   }
 
+  /**
+   * Authenticate the user before entering the app.
+   * @function login
+   * @memberof Home
+   */
   login() {
     Auth.logIn().then((user) => {
       this.setState({
         isAuthenticated: true,
-        user: user
+        user
       });
     });
   }
 
+/**
+ * Renders the home page
+ * @returns {void}
+ * @memberof Home
+ */
   render() {
     return (
       <div className="home-page">
@@ -31,8 +51,8 @@ class Home extends React.Component {
             </h2>
             <p>News Flash, Get the latest news around the globe here</p>
             <div>
-              <button 
-                onClick={this.login} 
+              <button
+                onClick={this.login}
                 className="login"
               ><i className="fa fa-google-plus" aria-hidden="true" /> Login With Google</button>
             </div>

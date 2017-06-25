@@ -1,4 +1,4 @@
 node_modules/
-src/__tests__/
+__tests__/
 public/
 webpack.config.js

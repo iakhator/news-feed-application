@@ -1,9 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
+/**
+ * A child component of Newsfeeds component.
+ * @param {string} props
+ * @returns {void}
+ */
 function Sources(props) {
   const { search, newsSource } = props;
+
+  /**
+   * renders the sources to the dom.
+   */
   return (
     <div className="row">
       <div className="col-md-10 col-md-offset-1">
@@ -22,15 +31,17 @@ function Sources(props) {
                   </li>
                 </ul>
                 {sources.sortBysAvailable.map((sortBy) => {
-                  return(
+                  return (
                     <div key={sortBy}>
                       <ul className="sort pull-right">
                         <li>
-                          <Link to={`/newsfeeds/${sources.id}/${sortBy}`}>{sortBy}</Link>
+                          <Link
+                            to={`/newsfeeds/${sources.id}/${sortBy}`}>{sortBy}
+                          </Link>
                         </li>
                       </ul>
                     </div>
-                  )
+                  );
                 })}
               </div>
           ))}
@@ -43,6 +54,6 @@ function Sources(props) {
 Sources.PropTypes = {
   newsSource: PropTypes.array.isRequired,
   search: PropTypes.string.isRequired
-}
+};
 
 export default Sources;
