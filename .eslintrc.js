@@ -65,7 +65,7 @@ module.exports = {
     "react/no-set-state": 0,
     "react/no-unknown-property": 1,
     "react/prefer-es6-class": 1,
-    "react/prop-types": 1,
+    "react/prop-types": 0,
     "react/react-in-jsx-scope": 1,
     "react/require-extension": 0,
     "react/self-closing-comp": 1,
