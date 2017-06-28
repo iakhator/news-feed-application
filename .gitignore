@@ -4,4 +4,4 @@ coverage
 .env
 .DS_Store
 .lcov.info
-public/
+public
