@@ -61,6 +61,8 @@ function Headline(props) {
 
 Headline.PropTypes = {
   newsArticle: PropTypes.array.isRequired,
+  sourceId: PropTypes.string.isRequired,
+  sortBy: PropTypes.string.isRequired
 };
 
 export default Headline;

@@ -7,7 +7,7 @@ import Auth from '../../helpers/auth';
 /**
  * The Nav class displays the navigation in
  * all components
- * @class Nav
+ * @class NavBar
  */
 class NavBar extends React.Component {
 
@@ -64,7 +64,10 @@ class NavBar extends React.Component {
             </button>
             <a className="navbar-brand">NewsFlash</a>
           </div>
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div
+            className="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1"
+          >
             <ul className="nav navbar-nav">
               {!authenticate
               ? <li>

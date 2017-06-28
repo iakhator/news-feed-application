@@ -80,6 +80,10 @@ class NewsFeeds extends React.Component {
     });
   }
 
+  /**
+   *Re-Update error message
+   * @memberof NewsFeeds
+   */
   recieveError() {
     this.setState({
       errorMessage: NewsStore.getError()
@@ -95,31 +99,35 @@ class NewsFeeds extends React.Component {
     return (
       <div className="source-body">
         <div className="container contain">
-          {this.state.errorMessage ? <p className="error">OOPs an error occured</p> :
-          <div className="row">
-            <div className="col-md-10 col-md-offset-1">
-              <p className="news-source text-center ">
-                <i className="fa fa-newspaper-o fa-2x" aria-hidden="true" />
-                <span>Welcome to NewsFlash</span></p>
-              <div className="page-header col-md-10 col-md-offset-1">
-                <input
-                  className="form-control"
-                  placeholder="Search for your favourite headlines on the go..."
-                  type="text"
-                  value={this.state.search}
-                  onChange={this.onSearch}
-                />
+          {this.state.errorMessage ?
+            <p className="error">OOPs an error occured</p> :
+            <div className="row">
+              <div className="col-md-10 col-md-offset-1">
+                <p className="news-source text-center ">
+                  <i className="fa fa-newspaper-o fa-2x" aria-hidden="true" />
+                  <span>Welcome to NewsFlash</span></p>
+                <div className="page-header col-md-10 col-md-offset-1">
+                  <input
+                    className="form-control"
+                    placeholder="Search for your favourite news sources on the go..."
+                    type="text"
+                    value={this.state.search}
+                    onChange={this.onSearch}
+                  />
+                </div>
+                {!this.state.newsSource ? <div className="load">
+                Loading <i
+                className="fa fa-spinner fa-spin"
+                style={{ fontSize: 24 }} /></div> :
+                <div>
+                  <Sources
+                      newsSource={this.state.newsSource}
+                      search={this.state.search}
+                    />
+                </div>
+                }
               </div>
-              {!this.state.newsSource ? <div className="load">Loading...</div> :
-              <div>
-                <Sources
-                  newsSource={this.state.newsSource}
-                  search={this.state.search}
-                />
-              </div>
-              }
             </div>
-          </div>
            }
         </div>
       </div>

@@ -9,21 +9,32 @@ import NavBar from './header/NavBar';
 import NewsHeadline from './NewsHeadline';
 import { firebaseAuth } from '../config/firebase-config';
 
+/**
+ * Proctected private Route
+ * @params {object} { component: Component, isAuthenticated, ...rest }
+ * @returns {route}
+ */
 function PrivateRoute({ component: Component, isAuthenticated, ...rest }) {
   return (
     <Route
       {...rest}
       render={props => (isAuthenticated === true
       ? <Component {...props} />
-      : <Redirect to={{ pathname: '/', state: { from: props.location } }} />)}
+      : <Redirect to="/" />)}
     />
   );
 }
 
 PrivateRoute.PropTypes = {
-  component: PropTypes.string
+  component: PropTypes.element,
+  isAuthenticated: PropTypes.bool.isRequired
 };
 
+/**
+ * Proctected public Route
+ * @params {object} { component: Component, isAuthenticated, ...rest }
+ * @returns {component}
+ */
 function PublicRoute({ component: Component, isAuthenticated, ...rest }) {
   return (
     <Route
@@ -35,6 +46,17 @@ function PublicRoute({ component: Component, isAuthenticated, ...rest }) {
   );
 }
 
+PublicRoute.PropTypes = {
+  component: PropTypes.element,
+  isAuthenticated: PropTypes.bool.isRequired
+};
+
+/**
+ * The component maintains all routes.
+ * Checks for user signed in and signed out
+ * @class App
+ * @extends {React.Component}
+ */
 class App extends React.Component {
   constructor() {
     super();
@@ -44,6 +66,11 @@ class App extends React.Component {
     };
   }
 
+  /**
+   * Checks for user signin or signout
+   * set the state
+   * @memberof App
+   */
   componentDidMount() {
     firebaseAuth.onAuthStateChanged((user) => {
       if (user) {
@@ -53,12 +80,18 @@ class App extends React.Component {
         });
       } else {
         this.setState({
-          isAuthenticated: false
+          isAuthenticated: false,
+          displayName: ''
         });
       }
     });
   }
 
+  /**
+   * Renders the routes
+   * @returns {void}
+   * @memberof App
+   */
   render() {
     return (
       <Router>

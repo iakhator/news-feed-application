@@ -36,6 +36,7 @@ function Sources(props) {
                       <ul className="sort pull-right">
                         <li>
                           <Link
+                            className="btn btn-sm"
                             to={`/newsfeeds/${sources.id}/${sortBy}`}>{sortBy}
                           </Link>
                         </li>

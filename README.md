@@ -1,7 +1,7 @@
 # News Feed application
 
 [![Build Status](https://travis-ci.org/iakhator/news-feed-application.svg?branch=deployment)](https://travis-ci.org/iakhator/news-feed-application)
-[![Coverage Status](https://coveralls.io/repos/github/iakhator/news-feed-application/badge.svg?branch=develop)](https://coveralls.io/github/iakhator/news-feed-application?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/iakhator/news-feed-application/badge.svg?branch=deployment)](https://coveralls.io/github/iakhator/news-feed-application?branch=deployment)
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
 
 ## Introduction
@@ -25,29 +25,30 @@ User have to sign in before it can be use.
 
 ## Local Installation Guide
 * Ensure Node is installed
-* clone the repo with the following command `git clone https://github.com/iakhaor/news-feed-application.git`
+* clone the repo with the following command `git clone https://github.com/iakhator/news-feed-application.git`
 * Run `npm install` to install all the dependencies needed to run the application
 * Install `webpack` globally
 * To test the application, run `npm test`
-* Run `npm start` to start the server and visit `http://localhost:5000`
+* On your local machine Run `npm start` to start the server and visit `http://localhost:5000`
 
 ## Technologies
- * ECMAScript 6: This is the newest version of JavsScript with new features such as arrow functions, spread operator and many more.
- * REACT: REACT is a JavaScript library that was developed by Facebook and is used for developing web application. REACT is the 'VIEW' in the MVC architecture.
- * FLUX: Flux is an architecture used for building stable and efficient web applications. Flux design is a unidirectional flow of data.
+ * [ECMAScript 6](http://es6-features.org/): This is the newest version of JavsScript with new features such as arrow functions, spread and rest operators and many more.
+ * [REACT](https://facebook.github.io/react/): REACT is a JavaScript framework developed by Facebook and it is used for developing web application. REACT is the 'VIEW' in the MVC architecture.
+ * [FLUX](http://facebook.github.io/flux/): Flux is an architecture used for building stable and efficient web applications. Flux design is a unidirectional flow of data.
+ * [EXPRESS](https://expressjs.com/): Express is a Javascript library used for routing and creating of API
 
 ## Limitations
-* Users are only able to sign in with google plus.
+* Users can only sign in with google plus.
 * Users cannot mark articles as favourites.
 * Users cannot view full article in app.
 * Users cannot share articles on Facebook etc.
 
 ## Contributions
- Contributions are always welcome. If you are interested in enhancing the features in the project, follow these steps:
+ Contributions are always welcome. If you are interested in enhancing the features in the project, follow these steps below:
  * Fork the project to your repository then clone it to your local machine.
  * Create a new branch and make features that will enhance it.
  * If the you wish to update an existing enhancement submit a pull request.
- * If you need clarity of what is not clear, contact me.
+ * If you need clarification on what is not clear, contact me.
 
 
 ## License

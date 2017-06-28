@@ -16,6 +16,7 @@ class ArticlesStore extends EventEmitter {
   constructor() {
     super();
     this.newsArticle = [];
+    this.errorMessage = '';
   }
 
   /**
@@ -29,12 +30,31 @@ class ArticlesStore extends EventEmitter {
   }
 
   /**
+   * Set error message
+   * @param {string} message
+   * @memberof ArticlesStore
+   */
+  setError(message) {
+    this.errorMessage = message;
+    this.emit('change');
+  }
+
+  /**
    * returns newsArticle array.
    * @returns {Array}
    * @memberof ArticlesStore
   */
   getArticle() {
     return this.newsArticle;
+  }
+
+  /**
+   * Get error message
+   * @returns {string}
+   * @memberof ArticlesStore
+   */
+  getError() {
+    return this.errorMessage;
   }
 
   /**
@@ -48,6 +68,9 @@ class ArticlesStore extends EventEmitter {
     switch (action.type) {
     case 'RECIEVE_ARTICLE':
       this.setArticle(action.article);
+      break;
+    case 'RECIEVE_ARTICLE_ERROR':
+      this.setError(action.message);
       break;
     default:
       return false;

@@ -21,7 +21,8 @@ class NewsHeadline extends React.Component {
     this.state = {
       newsArticle: null
     };
-    this.recieveSource = this.recieveSource.bind(this);
+    this.recieveArticle = this.recieveArticle.bind(this);
+    // this.recieveError = this.recieveError.bind(this);
   }
 
   /**
@@ -43,7 +44,7 @@ class NewsHeadline extends React.Component {
    * @memberof NewsHeadline
    */
   componentWillUnmount() {
-    ArtclesStore.removeListener('change', this.recieveSource);
+    ArtclesStore.removeListener('change', this.recieveArticle);
   }
 
   /**
@@ -51,16 +52,16 @@ class NewsHeadline extends React.Component {
    * @memberof NewsHeadline
    */
   onRecieveChange() {
-    ArtclesStore.on('change', this.recieveSource);
+    ArtclesStore.on('change', this.recieveArticle);
   }
 
   /**
-   * setState after change in store to the newstate.
+   * setState after change in store to the newsArticle.
    * @memberof NewsHeadline
    */
-  recieveSource() {
+  recieveArticle() {
     this.setState({
-      newsArticle: ArtclesStore.getArticle()
+      newsArticle: ArtclesStore.getArticle(),
     });
   }
 
@@ -73,11 +74,16 @@ class NewsHeadline extends React.Component {
     return (
       <div className="body">
         <div className="container">
-          <div className="row ">
+          <div className="row">
             <div className="col-md-10 col-md-offset-1">
               <div className="single-source">
                 {!this.state.newsArticle
-                  ? <p className="load ">Loading...</p>
+                  ? <p className="load ">
+                    Loading <i
+                    className="fa fa-spinner fa-spin"
+                    style={{ fontSize: 24 }}
+                    />
+                  </p>
                   : <Headline
                     newsArticle={this.state.newsArticle}
                     sourceId={this.props.match.params.sourceId}
