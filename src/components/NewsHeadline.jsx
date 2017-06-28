@@ -22,7 +22,6 @@ class NewsHeadline extends React.Component {
       newsArticle: null
     };
     this.recieveArticle = this.recieveArticle.bind(this);
-    // this.recieveError = this.recieveError.bind(this);
   }
 
   /**
