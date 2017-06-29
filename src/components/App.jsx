@@ -7,6 +7,7 @@ import Home from './home/Home';
 import NewsFeeds from './NewsFeeds';
 import NavBar from './header/NavBar';
 import NewsHeadline from './NewsHeadline';
+import Footer from './Footer';
 import { firebaseAuth } from '../config/firebase-config';
 
 /**
@@ -121,6 +122,7 @@ class App extends React.Component {
             />
             <Route render={() => <p className="not-found">404 Not Found </p>} />
           </Switch>
+          <Footer />
         </div>
       </Router>
     );

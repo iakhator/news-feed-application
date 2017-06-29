@@ -323,3 +323,14 @@ button{
       background-color: $bgHighlight; }}}
   }
   
+  .footer{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:50px;
+    width:100%;
+    .text-muted{
+      padding-top: 10px;
+      color: $white;
+    }
+  }

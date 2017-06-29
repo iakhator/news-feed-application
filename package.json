@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run build && node server.js",
     "test": "jest --coverage",
+    "dev":"webpack-dev-server",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "build": "webpack -p"
   },

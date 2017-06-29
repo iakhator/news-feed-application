@@ -35,13 +35,12 @@ User have to sign in before it can be use.
  * [ECMAScript 6](http://es6-features.org/): This is the newest version of JavsScript with new features such as arrow functions, spread and rest operators and many more.
  * [REACT](https://facebook.github.io/react/): REACT is a JavaScript framework developed by Facebook and it is used for developing web application. REACT is the 'VIEW' in the MVC architecture.
  * [FLUX](http://facebook.github.io/flux/): Flux is an architecture used for building stable and efficient web applications. Flux design is a unidirectional flow of data.
- * [EXPRESS](https://expressjs.com/): Express is a Javascript library used for routing and creating of API
 
 ## Limitations
 * Users can only sign in with google plus.
 * Users cannot mark articles as favourites.
-* Users cannot view full article in app.
-* Users cannot share articles on Facebook etc.
+* Users cannot view full article wthin application.
+* Users cannot share articles on Social media platforms.
 
 ## Contributions
  Contributions are always welcome. If you are interested in enhancing the features in the project, follow these steps below:
