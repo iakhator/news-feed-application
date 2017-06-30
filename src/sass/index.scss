@@ -174,6 +174,12 @@ button{
         background: $hash;
         color: $white;
         border-radius: 3px;
+        :focus{
+          color: $white !important
+        };
+        :active{
+          color: $white !important
+        }
       }
     }
   }
@@ -218,7 +224,10 @@ button{
   overflow-y: visible;
   img{
     width: 100%;
-    height: 350px;
+    height: 200px;
+    border-radius: 3px;
+    border-right: 1px solid $hash;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .page-header{
     margin-top: -8px;
@@ -341,6 +350,18 @@ button{
     width: 75%;
   }
 
+  .sort-fixed{
+    z-index: 1;
+    background: $light-ash !important;
+    width: 81.5%;
+    margin-top: -100px;
+    height: 80px;
+    h2{
+      margin-top: 40px;
+      margin-left: 390px;
+    }
+  }
+
   .list{
     overflow: auto;
     margin-top: 100px;
@@ -350,3 +371,46 @@ button{
   .no-match{
     font-size: 20px;
   }
+
+.see-more{
+  margin-top: 30px;
+  color: $white !important;
+  background: $hash !important;
+  :focus{
+    color: $white !important
+  }
+  :active{
+    color: $white !important
+  }
+}
+.publish-time{
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.body{
+  background: $light-ash !important;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover !important;
+  -o-background-size: cover;
+  width: 100%;
+}
+
+.rss-sm{
+  color: $rss;
+}
+
+.sortBys{
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.sort-header{
+  width: 100% !important;
+}
+
+.articles{
+  margin-top: 40px;
+}

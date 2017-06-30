@@ -1,5 +1,6 @@
 import { EventEmitter } from 'events';
 import AppDispatcher from '../dispatcher/AppDispatcher';
+import * as NewsAPI from '../utils/NewsApi';
 
 /**
  * Data store for sources
@@ -55,6 +56,10 @@ class NewsStore extends EventEmitter {
    */
   getError() {
     return this.errorMessage;
+  }
+
+  getNewsSources() {
+    return NewsAPI.getNewsSources();
   }
 
   /**

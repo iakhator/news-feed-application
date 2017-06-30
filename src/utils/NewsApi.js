@@ -22,3 +22,15 @@ export const getNews = (url) => {
   return axios.get(url)
   .then(source => source.data.articles);
 };
+
+export const getNewsSources = () => {
+  return new Promise((resolve, reject) => {
+    axios.get('https://newsapi.org/v1/sources?language=en')
+    .then((res) => {
+      resolve((res));
+    })
+    .catch((error) => {
+      if (error) reject(error);
+    });
+  });
+};

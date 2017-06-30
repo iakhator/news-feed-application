@@ -62,23 +62,19 @@ class NavBar extends React.Component {
               <span className="icon-bar" />
               <span className="icon-bar" />
             </button>
-            <a className="navbar-brand">NewsFlash</a>
+            <NavLink exact activeClassName="active" className="navbar-brand" to="/">
+              <i className="fa fa-rss rss-sm" aria-hidden="true" /> NewsFlash
+            </NavLink>
           </div>
           <div
             className="collapse navbar-collapse"
             id="bs-example-navbar-collapse-1"
           >
             <ul className="nav navbar-nav">
-              {!authenticate
-              ? <li>
-                <NavLink exact activeClassName="active" to="/">
-                    Home
-                  </NavLink>
-              </li>
-                : <li>
-                  <NavLink activeClassName="active" to="/newsfeeds">
-                    NewsFeeds
-                  </NavLink>
+              {authenticate && <li>
+                <NavLink activeClassName="active" to="/newsfeeds">
+                  NewsFeeds
+                </NavLink>
                 </li>
               }
             </ul>

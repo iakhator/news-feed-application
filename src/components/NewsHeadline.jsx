@@ -16,8 +16,8 @@ class NewsHeadline extends React.Component {
    * Initialize state
    * @memberof NewsHeadline
    */
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       newsArticles: null
     };
@@ -35,6 +35,11 @@ class NewsHeadline extends React.Component {
     NewsActions.getArticles(this.props.match.params.sourceId,
     this.props.match.params.sortBy);
     this.onRecieveChange();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    NewsActions.getArticles(this.props.match.params.sourceId,
+    this.props.match.params.sortBy);
   }
 
   /**
@@ -59,6 +64,7 @@ class NewsHeadline extends React.Component {
    * @memberof NewsHeadline
    */
   getNewsArticles() {
+    console.log(ArticlesStore.getArticles());
     this.setState({
       newsArticles: ArticlesStore.getArticles(),
     });
@@ -73,24 +79,20 @@ class NewsHeadline extends React.Component {
     return (
       <div className="body">
         <div className="container">
-          <div className="row">
-            <div className="col-md-10 col-md-offset-1">
-              <div className="single-source">
-                {!this.state.newsArticles
-                  ? <p className="load ">
-                    Loading <i
-                    className="fa fa-spinner fa-spin"
-                    style={{ fontSize: 24 }}
-                    />
-                  </p>
-                  : <Headline
-                    newsArticle={this.state.newsArticles}
-                    sourceId={this.props.match.params.sourceId}
-                    sortBy={this.props.match.params.sortBy}
-                  />
-                }
-              </div>
-            </div>
+          <div className="single-source">
+            {!this.state.newsArticles
+              ? <p className="load ">
+                Loading <i
+                className="fa fa-spinner fa-spin"
+                style={{ fontSize: 24 }}
+                />
+              </p>
+              : <Headline
+                newsArticle={this.state.newsArticles}
+                sourceId={this.props.match.params.sourceId}
+                sortBy={this.props.match.params.sortBy}
+              />
+            }
           </div>
         </div>
       </div>
