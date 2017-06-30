@@ -2,6 +2,7 @@ import React from 'react';
 import Sources from './Sources';
 import * as NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
+import Input from './Input';
 
 /**
  *The newsfeeds component renders the api sources
@@ -23,8 +24,8 @@ class NewsFeeds extends React.Component {
       search: '',
       isAuthenticated: false
     };
-    this.recieveSources = this.recieveSources.bind(this);
-    this.recieveError = this.recieveError.bind(this);
+    this.getNewsSources = this.getNewsSources.bind(this);
+    this.getNewsError = this.getNewsError.bind(this);
     this.onSearch = this.onSearch.bind(this);
   }
 
@@ -34,7 +35,7 @@ class NewsFeeds extends React.Component {
  * @memberof NewsFeeds
  */
   componentDidMount() {
-    NewsActions.recieveSources();
+    NewsActions.getSources();
     this.onRecieveChange();
   }
 
@@ -43,8 +44,8 @@ class NewsFeeds extends React.Component {
  * @memberof NewsFeeds
  */
   componentWillUnmount() {
-    NewsStore.removeListener('change', this.recieveSources);
-    NewsStore.removeListener('change', this.recieveError);
+    NewsStore.removeListener('change', this.getNewsSources);
+    NewsStore.removeListener('change', this.getNewsError);
   }
 
 /**
@@ -53,8 +54,8 @@ class NewsFeeds extends React.Component {
  * @memberof NewsFeeds
  */
   onRecieveChange() {
-    NewsStore.on('change', this.recieveSources);
-    NewsStore.on('change', this.recieveError);
+    NewsStore.on('change', this.getNewsSources);
+    NewsStore.on('change', this.getNewsError);
   }
 
 /**
@@ -74,7 +75,7 @@ class NewsFeeds extends React.Component {
  * sources coming from the store.
  * @memberof NewsFeeds
  */
-  recieveSources() {
+  getNewsSources() {
     this.setState({
       newsSource: NewsStore.getSources()
     });
@@ -84,7 +85,7 @@ class NewsFeeds extends React.Component {
    *Re-Update error message
    * @memberof NewsFeeds
    */
-  recieveError() {
+  getNewsError() {
     this.setState({
       errorMessage: NewsStore.getError()
     });
@@ -103,23 +104,23 @@ class NewsFeeds extends React.Component {
             <p className="error">OOPs an error occured</p> :
             <div className="row">
               <div className="col-md-10 col-md-offset-1">
-                <p className="news-source text-center ">
-                  <i className="fa fa-newspaper-o fa-2x" aria-hidden="true" />
-                  <span>Welcome to NewsFlash</span></p>
-                <div className="page-header col-md-10 col-md-offset-1">
-                  <input
-                    className="form-control"
-                    placeholder="Search for your favourite news sources on the go..."
-                    type="text"
-                    value={this.state.search}
-                    onChange={this.onSearch}
-                  />
+                <div className="input-fixed affix">
+                  <p className="news-source text-center ">
+                    <i className="fa fa-newspaper-o fa-2x" aria-hidden="true" />
+                    <span>Welcome to NewsFlash</span>
+                  </p>
+                  <div className="page-header col-md-10 col-md-offset-1">
+                    <Input
+                      search={this.state.search}
+                      onSearch={this.onSearch}
+                    />
+                  </div>
                 </div>
                 {!this.state.newsSource ? <div className="load">
                 Loading <i
                 className="fa fa-spinner fa-spin"
                 style={{ fontSize: 24 }} /></div> :
-                <div>
+                <div className="list">
                   <Sources
                       newsSource={this.state.newsSource}
                       search={this.state.search}

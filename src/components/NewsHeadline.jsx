@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as NewsActions from '../actions/NewsActions';
-import ArtclesStore from '../stores/ArticlesStore';
+import ArticlesStore from '../stores/ArticlesStore';
 import Headline from './Headline';
 
 /**
@@ -19,9 +19,9 @@ class NewsHeadline extends React.Component {
   constructor() {
     super();
     this.state = {
-      newsArticle: null
+      newsArticles: null
     };
-    this.recieveArticle = this.recieveArticle.bind(this);
+    this.getNewsArticles = this.getNewsArticles.bind(this);
   }
 
   /**
@@ -32,7 +32,7 @@ class NewsHeadline extends React.Component {
    * @memberof NewsHeadline
    */
   componentDidMount() {
-    NewsActions.getArticle(this.props.match.params.sourceId,
+    NewsActions.getArticles(this.props.match.params.sourceId,
     this.props.match.params.sortBy);
     this.onRecieveChange();
   }
@@ -43,7 +43,7 @@ class NewsHeadline extends React.Component {
    * @memberof NewsHeadline
    */
   componentWillUnmount() {
-    ArtclesStore.removeListener('change', this.recieveArticle);
+    ArticlesStore.removeListener('change', this.getNewsArticles);
   }
 
   /**
@@ -51,16 +51,16 @@ class NewsHeadline extends React.Component {
    * @memberof NewsHeadline
    */
   onRecieveChange() {
-    ArtclesStore.on('change', this.recieveArticle);
+    ArticlesStore.on('change', this.getNewsArticles);
   }
 
   /**
    * setState after change in store to the newsArticle.
    * @memberof NewsHeadline
    */
-  recieveArticle() {
+  getNewsArticles() {
     this.setState({
-      newsArticle: ArtclesStore.getArticle(),
+      newsArticles: ArticlesStore.getArticles(),
     });
   }
 
@@ -76,7 +76,7 @@ class NewsHeadline extends React.Component {
           <div className="row">
             <div className="col-md-10 col-md-offset-1">
               <div className="single-source">
-                {!this.state.newsArticle
+                {!this.state.newsArticles
                   ? <p className="load ">
                     Loading <i
                     className="fa fa-spinner fa-spin"
@@ -84,7 +84,7 @@ class NewsHeadline extends React.Component {
                     />
                   </p>
                   : <Headline
-                    newsArticle={this.state.newsArticle}
+                    newsArticle={this.state.newsArticles}
                     sourceId={this.props.match.params.sourceId}
                     sortBy={this.props.match.params.sortBy}
                   />

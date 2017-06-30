@@ -35,7 +35,7 @@ describe('NewsSources Store', () => {
       expect(NewsStore.getSources()).toEqual([]);
   });
 
-it('should register all sources', () => {
+it('should return all sources', () => {
       mockDispatcher(sourcesAction);
       let result = (NewsStore.getSources());
       expect(result[0].id).toBe("al-jazeera-english");

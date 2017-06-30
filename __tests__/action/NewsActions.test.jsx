@@ -45,14 +45,14 @@ describe('News API Actions', () => {
      spyOnDispatcher.mockReset();
     });
 
-  describe('Test for recieveSources function', () => {
+  describe('Test for getSources function', () => {
 
     it('should have a recieveSources function', () => {
-      expect(NewsActions.recieveSources).toBeDefined();
+      expect(NewsActions.getSources).toBeDefined();
     });
 
     it('should dispatch an action', () => 
-      NewsActions.recieveSources()
+      NewsActions.getSources()
         .then(() => {
           const dispatcherCall = spyOnDispatcher.mock.calls[0][0];
           expect(spyOnDispatcher).toHaveBeenCalled();
@@ -62,18 +62,18 @@ describe('News API Actions', () => {
     );
   });
   
-  describe('Test for getArticle function', () => {
+  describe('Test for getArticles function', () => {
 
-    it('should have a getArticle function', () => {
-      expect(NewsActions.getArticle).toBeDefined();
+    it('should have a getArticles function', () => {
+      expect(NewsActions.getArticles).toBeDefined();
     }); 
     
     it('should dispatch an action', () => 
-      NewsActions.getArticle('abc-news-au', 'top')
+      NewsActions.getArticles('abc-news-au', 'top')
         .then(() => {
           const dispatcherCall = spyOnDispatcher.mock.calls[0][0];
           expect(spyOnDispatcher).toHaveBeenCalled();
-          expect(dispatcherCall.type).toEqual('RECIEVE_ARTICLE');
+          expect(dispatcherCall.type).toEqual('RECIEVE_ARTICLES');
           expect(dispatcherCall.article).toBeInstanceOf(Object);
         })
     );

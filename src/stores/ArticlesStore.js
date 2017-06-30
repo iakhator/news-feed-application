@@ -15,17 +15,17 @@ class ArticlesStore extends EventEmitter {
    */
   constructor() {
     super();
-    this.newsArticle = [];
+    this.newsArticles = [];
     this.errorMessage = '';
   }
 
   /**
    * set newsArticle to article.
-   * @param {Array} article
+   * @param {Array} articles
    * @memberof ArticlesStore
    */
-  setArticle(article) {
-    this.newsArticle = article;
+  setArticle(articles) {
+    this.newsArticles = articles;
     this.emit('change');
   }
 
@@ -44,8 +44,8 @@ class ArticlesStore extends EventEmitter {
    * @returns {Array}
    * @memberof ArticlesStore
   */
-  getArticle() {
-    return this.newsArticle;
+  getArticles() {
+    return this.newsArticles;
   }
 
   /**
@@ -66,10 +66,10 @@ class ArticlesStore extends EventEmitter {
    */
   handleActions(action) {
     switch (action.type) {
-    case 'RECIEVE_ARTICLE':
-      this.setArticle(action.article);
+    case 'RECIEVE_ARTICLES':
+      this.setArticle(action.articles);
       break;
-    case 'RECIEVE_ARTICLE_ERROR':
+    case 'RECIEVE_ARTICLES_ERROR':
       this.setError(action.message);
       break;
     default:

@@ -9,19 +9,22 @@ import { Link } from 'react-router-dom';
  */
 function Sources(props) {
   const { search, newsSource } = props;
+  const filterSource = newsSource.filter(
+    sources => (sources.name.toLowerCase().indexOf(search.toLowerCase()) >= 0)
+  );
 
   /**
    * renders the sources to the dom.
    */
   return (
-    <div className="row">
+    <div className="row list">
       <div className="col-md-10 col-md-offset-1">
         <div className="newsfeed">
-          {newsSource
-            .filter(
-            (sources) => {
-              return sources.name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
-            }).map(sources => (
+          {filterSource.length === 0 ?
+            <div className="no-match text-center">
+              Oops, No Result match your search query.
+            </div> :
+            filterSource.map(sources => (
               <div className="news-sources" key={sources.id}>
                 <h3 className="page-header">{sources.name}</h3>
                 <ul className="desc">
@@ -37,7 +40,8 @@ function Sources(props) {
                         <li>
                           <Link
                             className="btn btn-sm"
-                            to={`/newsfeeds/${sources.id}/${sortBy}`}>{sortBy}
+                            to={`/newsfeeds/${sources.id}/${sortBy}`}>
+                            See {sortBy} news
                           </Link>
                         </li>
                       </ul>

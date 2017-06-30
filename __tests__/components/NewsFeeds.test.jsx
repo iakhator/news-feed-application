@@ -25,7 +25,7 @@ describe('NewsFeeds', () => {
   });
 
   it('should check for methods', () => {
-    expect(container.instance().recieveSources).toBeDefined();
+    expect(container.instance().getNewsSources).toBeDefined();
     expect(container.instance().onSearch).toBeDefined();
     expect(container.instance().onRecieveChange).toBeDefined();
   });
@@ -42,7 +42,7 @@ describe('NewsFeeds', () => {
   it('calls componentDidMount() lifecycle method', () => {
     const componentDidMountSpy = jest.spyOn(NewsFeeds.prototype, 'componentDidMount');
     const newsStoreSpy = jest.spyOn(NewsStore, 'on');
-    const newsActionSpy = jest.spyOn(NewsActions, 'recieveSources');
+    const newsActionSpy = jest.spyOn(NewsActions, 'getSources');
     const container = mount(<NewsFeeds />);
     expect(componentDidMountSpy).toHaveBeenCalled();
     expect(newsActionSpy).toBeCalledWith();
