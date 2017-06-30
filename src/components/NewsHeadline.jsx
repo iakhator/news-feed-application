@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import * as NewsActions from '../actions/NewsActions';
 import ArticlesStore from '../stores/ArticlesStore';
 import Headline from './Headline';
+import Loader from './Loader';
 
 /**
  * The parent component of Headline
@@ -37,9 +38,15 @@ class NewsHeadline extends React.Component {
     this.onRecieveChange();
   }
 
+  /**
+   * Takes in the next value recieved.
+   * Make an action and Update the dom
+   * @param {string} nextProps
+   * @memberof NewsHeadline
+   */
   componentWillReceiveProps(nextProps) {
-    NewsActions.getArticles(this.props.match.params.sourceId,
-    this.props.match.params.sortBy);
+    NewsActions.getArticles(nextProps.match.params.sourceId,
+    nextProps.match.params.sortBy);
   }
 
   /**
@@ -64,7 +71,6 @@ class NewsHeadline extends React.Component {
    * @memberof NewsHeadline
    */
   getNewsArticles() {
-    console.log(ArticlesStore.getArticles());
     this.setState({
       newsArticles: ArticlesStore.getArticles(),
     });
@@ -81,12 +87,7 @@ class NewsHeadline extends React.Component {
         <div className="container">
           <div className="single-source">
             {!this.state.newsArticles
-              ? <p className="load ">
-                Loading <i
-                className="fa fa-spinner fa-spin"
-                style={{ fontSize: 24 }}
-                />
-              </p>
+              ? <Loader />
               : <Headline
                 newsArticle={this.state.newsArticles}
                 sourceId={this.props.match.params.sourceId}

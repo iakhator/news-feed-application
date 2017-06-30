@@ -3,6 +3,7 @@ import Sources from './Sources';
 import * as NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
 import Input from './Input';
+import Loader from './Loader';
 
 /**
  *The newsfeeds component renders the api sources
@@ -116,10 +117,7 @@ class NewsFeeds extends React.Component {
                     />
                   </div>
                 </div>
-                {!this.state.newsSource ? <div className="load">
-                Loading <i
-                className="fa fa-spinner fa-spin"
-                style={{ fontSize: 24 }} /></div> :
+                {!this.state.newsSource ? <Loader /> :
                 <div className="list">
                   <Sources
                       newsSource={this.state.newsSource}

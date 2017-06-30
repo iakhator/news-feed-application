@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NewsStore from '../stores/NewsStore';
 
+/**
+ * Get sortBysAvailabe
+ * @class SortBy
+ * @extends {React.Component}
+ */
 class SortBy extends React.Component {
   constructor(props) {
     super(props);
@@ -19,21 +24,25 @@ class SortBy extends React.Component {
     });
   }
 
+  /**
+   * Renders latest and top button respectively.
+   * @returns {void}
+   * @memberof SortBy
+   */
   render() {
-    let sortBysAvailable = [];
-    let sortNews = [];
+    let sortBysAvailable;
+    let sortNews;
     if (this.state.sortBysAvailable[0]) {
       sortBysAvailable = this.state.sortBysAvailable[0].sortBysAvailable;
       sortNews = sortBysAvailable.map((sortBy) => {
         return (
-          <li
-            key={sortBy}
-          >
+          <li key={sortBy}>
             <Link
               className="btn sortBys btn-sm"
               to={`/newsfeeds/${this.props
                 .sourceId}/${sortBy}`}
-            >{sortBy.toUpperCase()} NEWS</Link></li>
+            >{sortBy.toUpperCase()} NEWS</Link>
+          </li>
         );
       });
     }
