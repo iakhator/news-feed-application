@@ -8,6 +8,7 @@ import NewsFeeds from './NewsFeeds';
 import NavBar from './header/NavBar';
 import NewsHeadline from './NewsHeadline';
 import Footer from './Footer';
+import NotFound from './NotFound';
 import { firebaseAuth } from '../config/firebase-config';
 
 /**
@@ -120,7 +121,7 @@ class App extends React.Component {
               path="/newsfeeds/:sourceId/:sortBy"
               component={NewsHeadline}
             />
-            <Route render={() => <p className="not-found">404 Not Found </p>} />
+            <Route path="*" component={NotFound} />
           </Switch>
           <Footer />
         </div>
