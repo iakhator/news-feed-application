@@ -1,7 +1,7 @@
 # News Feed application
 
 [![Build Status](https://travis-ci.org/iakhator/news-feed-application.svg?branch=deployment)](https://travis-ci.org/iakhator/news-feed-application)
-[![Coverage Status](https://coveralls.io/repos/github/iakhator/news-feed-application/badge.svg?branch=deployment)](https://coveralls.io/github/iakhator/news-feed-application?branch=deployment)
+[![Coverage Status](https://coveralls.io/repos/github/iakhator/news-feed-application/badge.svg?branch=deployment)](https://coveralls.io/github/iakhator/news-feed-application?branch=develop)
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
 
 ## Introduction
@@ -47,7 +47,7 @@ User have to sign in before it can be use.
  * Fork the project to your repository then clone it to your local machine.
  * Create a new branch and make features that will enhance it.
  * If the you wish to update an existing enhancement submit a pull request.
- * If you need clarification on what is not clear, contact me.
+ * If you need clarification on what is not clear, contact me via mail [itua.akhator@andela.com](mailto:itua.akhator@andela.com)
 
 
 ## License
