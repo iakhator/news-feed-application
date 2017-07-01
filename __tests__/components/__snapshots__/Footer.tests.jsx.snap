@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Page renders a snapshot 1`] = `
+<footer
+  className="footer navbar-default navbar-fixed"
+>
+  <div
+    className="container"
+  >
+    <p
+      className="text-muted text-center"
+    >
+      © 2017, Made By Itua Akhator
+    </p>
+  </div>
+</footer>
+`;

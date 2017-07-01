@@ -1,15 +1,14 @@
 import React from 'react';
-import { shallow, mount , render } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import NewsFeeds from '../../src/components/NewsFeeds';
 import * as NewsActions from '../../src/actions/NewsActions';
 import NewsStore from '../../src/stores/NewsStore';
 
 describe('NewsFeeds', () => {
-
   const container = shallow(<NewsFeeds />);
-  
+
   it('renders without crashing', () => {
-    mount(<NewsFeeds/>);
+    mount(<NewsFeeds />);
   });
 
   it('Should have an initial state for search string', () => {
@@ -29,13 +28,13 @@ describe('NewsFeeds', () => {
     expect(container.instance().onSearch).toBeDefined();
     expect(container.instance().onRecieveChange).toBeDefined();
   });
-  
+
   it('input search', () => {
     const onSearch = jest.fn();
-    onSearch.call()
-    const search = mount(<NewsFeeds onSearch={onSearch}/>);
+    onSearch.call();
+    const search = mount(<NewsFeeds onSearch={onSearch} />);
     const input = search.find('input');
-    input.simulate('change', { target: { value: ''} });
+    input.simulate('change', { target: { value: '' } });
     expect(onSearch).toBeCalledWith();
   });
 
@@ -43,7 +42,7 @@ describe('NewsFeeds', () => {
     const componentDidMountSpy = jest.spyOn(NewsFeeds.prototype, 'componentDidMount');
     const newsStoreSpy = jest.spyOn(NewsStore, 'on');
     const newsActionSpy = jest.spyOn(NewsActions, 'getSources');
-    const container = mount(<NewsFeeds />);
+    mount(<NewsFeeds />);
     expect(componentDidMountSpy).toHaveBeenCalled();
     expect(newsActionSpy).toBeCalledWith();
     expect(newsStoreSpy).toHaveBeenCalled();

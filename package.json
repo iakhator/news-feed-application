@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node server.js",
-    "test": "jest --coverage",
+    "test": "jest --coverage && jest --updateSnapshot",
     "dev":"webpack-dev-server",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "build": "webpack -p"

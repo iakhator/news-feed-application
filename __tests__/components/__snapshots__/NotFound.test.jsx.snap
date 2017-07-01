@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound Page renders a snapshot 1`] = `
+<div
+  className="not-found"
+>
+  <div
+    className="frown"
+  >
+    <i
+      aria-hidden="true"
+      className="fa fa-frown-o"
+    />
+  </div>
+  <div
+    className="four"
+  >
+    404
+  </div>
+  <div
+    className="four-text"
+  >
+    <h1>
+      Oops, we couldn't find that page!
+    </h1>
+    <p>
+      It looks like nothing was found at this Location
+    </p>
+  </div>
+</div>
+`;

@@ -24,7 +24,7 @@ describe('NewsHeadline', () => {
     const newsHeadline = jest.fn();
     const componentDidMountSpy = jest.spyOn(NewsHeadline.prototype, 'componentDidMount');
     const articleStoreSpy = jest.spyOn(ArticlesStore, 'on');
-    const  newsActionSpy = jest.spyOn(NewsActions, 'getArticle');
+    const  newsActionSpy = jest.spyOn(NewsActions, 'getArticles');
     const container = mount(<NewsHeadline {...props} onChange={newsHeadline}/>);
     expect(componentDidMountSpy).toHaveBeenCalled();
     expect(newsActionSpy).toBeCalledWith(props.match.params.sourceId, props.match.params.sortBy);

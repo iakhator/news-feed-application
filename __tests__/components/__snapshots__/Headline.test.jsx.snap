@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsHeadline renders correctly 1`] = `
+<div>
+  <div
+    className="sort-header sort-fixed affix"
+  >
+    <div>
+      <ul
+        className="sort pull-left"
+      />
+    </div>
+    <h2
+      className="article-title"
+    >
+      TOP
+       
+      CNN
+       NEWS
+    </h2>
+  </div>
+</div>
+`;

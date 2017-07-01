@@ -38,6 +38,7 @@ describe('News API Actions', () => {
   let spyOnDispatcher;
     beforeEach(() => {
      jest.mock('axios');
+     jest.mock('../../.env');
      spyOnDispatcher = jest.spyOn(AppDispatcher, 'dispatch');
     });
 
@@ -47,7 +48,7 @@ describe('News API Actions', () => {
 
   describe('Test for getSources function', () => {
 
-    it('should have a recieveSources function', () => {
+    it('should have a getSources function', () => {
       expect(NewsActions.getSources).toBeDefined();
     });
 
@@ -58,6 +59,10 @@ describe('News API Actions', () => {
           expect(spyOnDispatcher).toHaveBeenCalled();
           expect(dispatcherCall.type).toEqual('RECIEVE_SOURCES');
           expect(dispatcherCall.sources).toBeInstanceOf(Object);
+        }).catch(() => {
+          const dispatcherCall = spyOnDispatcher.mock.calls[0][0];
+          expect(spyOnDispatcher).toHaveBeenCalled();
+          expect(dispatcherCall.type).toEqual('RECIEVE_SOURCES_ERROR');
         })
     );
   });
@@ -74,7 +79,11 @@ describe('News API Actions', () => {
           const dispatcherCall = spyOnDispatcher.mock.calls[0][0];
           expect(spyOnDispatcher).toHaveBeenCalled();
           expect(dispatcherCall.type).toEqual('RECIEVE_ARTICLES');
-          expect(dispatcherCall.article).toBeInstanceOf(Object);
+          expect(dispatcherCall.articles).toBeInstanceOf(Object);
+        }).catch(() => {
+          const dispatcherCall = spyOnDispatcher.mock.calls[0][0];
+          expect(spyOnDispatcher).toHaveBeenCalled();
+          expect(dispatcherCall.type).toEqual('RECIEVE_ARTICLES_ERROR');
         })
     );
   });
