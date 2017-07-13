@@ -63,7 +63,7 @@ function Headline(props) {
   );
 }
 
-Headline.PropTypes = {
+Headline.propTypes = {
   newsArticle: PropTypes.array.isRequired,
   sourceId: PropTypes.string.isRequired,
   sortBy: PropTypes.string.isRequired

@@ -27,8 +27,8 @@ function PrivateRoute({ component: Component, isAuthenticated, ...rest }) {
   );
 }
 
-PrivateRoute.PropTypes = {
-  component: PropTypes.element,
+PrivateRoute.propTypes = {
+  component: PropTypes.element.isRequired,
   isAuthenticated: PropTypes.bool.isRequired
 };
 
@@ -48,8 +48,8 @@ function PublicRoute({ component: Component, isAuthenticated, ...rest }) {
   );
 }
 
-PublicRoute.PropTypes = {
-  component: PropTypes.element,
+PublicRoute.propTypes = {
+  component: PropTypes.element.isRequired,
   isAuthenticated: PropTypes.bool.isRequired
 };
 
@@ -131,4 +131,3 @@ class App extends React.Component {
 }
 
 export default App;
-
