@@ -50,7 +50,8 @@ module.exports = {
         DATABASE_URL: JSON.stringify(process.env.DATABASE_URL),
         PROJECT_ID: JSON.stringify(process.env.PROJECT_ID),
         STORAGE_BUCKET: JSON.stringify(process.env.STORAGE_BUCKET),
-        MESSENGING_SENDER_ID: JSON.stringify(process.env.MESSENGING_SENDER_ID)
+        MESSENGING_SENDER_ID: JSON.stringify(process.env.MESSENGING_SENDER_ID),
+        NEWS_API_KEY: JSON.stringify(process.env.NEWS_API_KEY)
       }
     })
   ]
