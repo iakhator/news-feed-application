@@ -1,5 +1,8 @@
 import React from 'react';
 
+const date = new Date();
+const year = date.getFullYear();
+
 /**
  * Renders the footer
  * @returns {void}
@@ -9,7 +12,7 @@ function Footer() {
     <footer className="footer navbar-default navbar-fixed">
       <div className="container">
         <p className="text-muted text-center">
-          &copy; 2017, Made By Itua Akhator
+          &copy;{year}, Made By Itua Akhator
         </p>
       </div>
     </footer>

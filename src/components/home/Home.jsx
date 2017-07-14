@@ -25,6 +25,7 @@ class Home extends React.Component {
    * Authenticate the user before entering the app.
    * @function login
    * @memberof Home
+   * @return {void}
    */
   login() {
     Auth.logIn().then((user) => {
@@ -54,7 +55,10 @@ class Home extends React.Component {
               <button
                 onClick={this.login}
                 className="login"
-              ><i className="fa fa-google-plus" aria-hidden="true" /> Login With Google</button>
+              ><i
+                className="fa fa-google-plus" aria-hidden="true" />
+                Login With Google
+              </button>
             </div>
           </div>
         </div>
