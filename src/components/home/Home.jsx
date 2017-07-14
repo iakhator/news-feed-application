@@ -50,14 +50,14 @@ class Home extends React.Component {
               <i className="fa fa-rss rss" aria-hidden="true" />
               <div>News Flash </div>
             </h2>
-            <p>News Flash, Get the latest news around the globe here</p>
+            <p>News Flash, Get the latest news around the globe here </p>
             <div>
               <button
                 onClick={this.login}
                 className="login"
               ><i
                 className="fa fa-google-plus" aria-hidden="true" />
-                Login With Google
+                  Login With Google
               </button>
             </div>
           </div>

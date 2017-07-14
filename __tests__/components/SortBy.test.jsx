@@ -13,6 +13,7 @@ describe('SortBy', () => {
   describe('NewsStore', () => {
     it('should call getNewsSources on entering Articles Page', () => {
       const newsStoreSpy = jest.spyOn(NewsStore, 'getNewsSources');
+      const wrapper = mount(<SortBy />);
       expect(newsStoreSpy).toBeCalled();
     });
   });
