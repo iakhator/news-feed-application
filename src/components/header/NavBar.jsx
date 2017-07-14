@@ -62,8 +62,15 @@ class NavBar extends React.Component {
               <span className="icon-bar" />
               <span className="icon-bar" />
             </button>
-            <NavLink exact activeClassName="active" className="navbar-brand" to="/">
-              <i className="fa fa-rss rss-sm" aria-hidden="true" /> NewsFlash
+            <NavLink
+              exact
+              activeClassName="active"
+              className="navbar-brand" to="/">
+              <i
+                className="fa fa-rss rss-sm"
+                aria-hidden="true"
+              />
+              NewsFlash
             </NavLink>
           </div>
           <div
@@ -99,7 +106,12 @@ class NavBar extends React.Component {
 
 export default NavBar;
 
-NavBar.PropTypes = {
-  authenticate: PropTypes.bool.isRequired,
-  displayName: PropTypes.string.required
+NavBar.propTypes = {
+  authenticate: PropTypes.bool,
+  displayName: PropTypes.string
+};
+
+NavBar.defaultProps = {
+  authenticate: true,
+  displayName: 'Itua'
 };

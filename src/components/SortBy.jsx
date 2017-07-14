@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import NewsStore from '../stores/NewsStore';
 
 /**
@@ -34,17 +35,15 @@ class SortBy extends React.Component {
     let sortNews;
     if (this.state.sortBysAvailable[0]) {
       sortBysAvailable = this.state.sortBysAvailable[0].sortBysAvailable;
-      sortNews = sortBysAvailable.map((sortBy) => {
-        return (
-          <li key={sortBy}>
-            <Link
-              className="btn sortBys btn-sm"
-              to={`/newsfeeds/${this.props
-                .sourceId}/${sortBy}`}
-            >{sortBy.toUpperCase()} NEWS</Link>
-          </li>
-        );
-      });
+      sortNews = sortBysAvailable.map(sortBy => (
+        <li key={sortBy}>
+          <Link
+            className="btn sortBys btn-sm"
+            to={`/newsfeeds/${this.props
+              .sourceId}/${sortBy}`}
+          >{sortBy.toUpperCase()} NEWS</Link>
+        </li>
+      ));
     }
     return (
       <div>
@@ -56,5 +55,9 @@ class SortBy extends React.Component {
 
 
 }
+
+SortBy.propTypes = {
+  sourceId: PropTypes.string
+};
 
 export default SortBy;

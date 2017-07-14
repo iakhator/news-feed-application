@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Render an input field of text
- * @returns {inputField}
+ * @returns {inputField} search field
+ * @param {object} props: params passed from NewsFeed
  */
-function Input(props) {
+function SearchField(props) {
   const { search, onSearch } = props;
   return (
     <input
@@ -17,4 +19,11 @@ function Input(props) {
   );
 }
 
-export default Input;
+
+SearchField.propTypes = {
+  search: PropTypes.string,
+  onSearch: PropTypes.func
+};
+
+
+export default SearchField;

@@ -7,44 +7,60 @@ import NewsStore from '../../src/stores/NewsStore';
 describe('NewsFeeds', () => {
   const container = shallow(<NewsFeeds />);
 
-  it('renders without crashing', () => {
+  it('should render without crashing', () => {
     mount(<NewsFeeds />);
   });
 
-  it('Should have an initial state for search string', () => {
+  it('Should have a state for search string', () => {
     expect(container.state().search).toBe('');
   });
 
-  it('Should have a div that renders the JSX on the DOM', () => {
+  it('Should have a `container` div', () => {
     expect(container.find('.container')).toBeTruthy();
   });
 
-  it('it initializes with an array for newsFeeds', () => {
+  it('should ', () => {
     expect(container.state().isAuthenticated).toBe(false);
   });
 
-  it('should check for methods', () => {
-    expect(container.instance().getNewsSources).toBeDefined();
-    expect(container.instance().onSearch).toBeDefined();
-    expect(container.instance().onRecieveChange).toBeDefined();
-  });
-
-  it('input search', () => {
+  it('should call onSearch method', () => {
     const onSearch = jest.fn();
     onSearch.call();
     const search = mount(<NewsFeeds onSearch={onSearch} />);
     const input = search.find('input');
-    input.simulate('change', { target: { value: '' } });
+    input.simulate('change', { target: { value: onSearch } });
     expect(onSearch).toBeCalledWith();
   });
 
-  it('calls componentDidMount() lifecycle method', () => {
-    const componentDidMountSpy = jest.spyOn(NewsFeeds.prototype, 'componentDidMount');
+
+  it('should call NewsStore', () => {
     const newsStoreSpy = jest.spyOn(NewsStore, 'on');
+    mount(<NewsFeeds />);
+    expect(newsStoreSpy).toHaveBeenCalled();
+  });
+
+
+  it('should trigger NewsAction', () => {
     const newsActionSpy = jest.spyOn(NewsActions, 'getSources');
     mount(<NewsFeeds />);
-    expect(componentDidMountSpy).toHaveBeenCalled();
     expect(newsActionSpy).toBeCalledWith();
-    expect(newsStoreSpy).toHaveBeenCalled();
+  });
+
+  describe('#getSources', () => {
+    it('should exist', () => {
+      expect(container.instance().getNewsSources).toBeDefined();
+    });
+  });
+
+  describe('#onSearch', () => {
+    it('should exist', () => {
+      expect(container.instance().onSearch).toBeDefined();
+    });
+  });
+
+  describe('#onRecieveChange', () => {
+    it('should exist', () => {
+      expect(container.instance().onRecieveChange).toBeDefined();
+    });
   });
 });

@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SortBy Page renders a snapshot 1`] = `
+exports[`<SortBy /> should render correctly 1`] = `
+<div>
+  <ul
+    className="sort pull-left"
+  />
+</div>
+`;
+
+exports[`SortBy should render correctly 1`] = `
 <div>
   <ul
     className="sort pull-left"

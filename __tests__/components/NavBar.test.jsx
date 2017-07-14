@@ -8,25 +8,16 @@ describe('NavBar', () => {
     isAuthenticated: true
   };
 
-  it('renders without crashing', () => {
+  it('should render without crashing', () => {
     shallow(<NavBar />);
   });
 
-
-  it('logOut should be defined', () => {
-    const logOut = jest.fn();
-    logOut();
-    expect(logOut).toBeDefined();
-  });
-
-  it('logOut', () => {
-    const spy = jest.spyOn(NavBar.prototype, 'logOut');
+  it('should have a logOut method', () => {
     const container = shallow(<NavBar {...props} />);
     container.instance().logOut();
-    expect(spy).toHaveBeenCalled();
   });
 
-  it('update isAuthenticated state', () => {
+  it('should update isAuthenticated state', () => {
     const container = shallow(<NavBar {...props} />);
     expect(container.state().isAuthenticated).toBe(true);
   });

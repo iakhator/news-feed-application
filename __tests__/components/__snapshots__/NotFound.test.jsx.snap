@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NotFound Page renders a snapshot 1`] = `
+exports[`NotFound should render correctly 1`] = `
 <div
   className="not-found"
 >

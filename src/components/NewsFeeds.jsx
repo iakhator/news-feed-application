@@ -2,7 +2,7 @@ import React from 'react';
 import Sources from './Sources';
 import * as NewsActions from '../actions/NewsActions';
 import NewsStore from '../stores/NewsStore';
-import Input from './Input';
+import SearchField from './SearchField';
 import Loader from './Loader';
 
 /**
@@ -16,9 +16,10 @@ class NewsFeeds extends React.Component {
    * Creates an instance of NewsFeeds.
    * bind methods and set initial state.
    * @memberof NewsFeeds
+   * @param {object} props
    */
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       newsSource: null,
       errorMessage: NewsStore.getError(),
@@ -34,6 +35,7 @@ class NewsFeeds extends React.Component {
  * The componentDidMount triggers the action
  * immediately the render method is executed
  * @memberof NewsFeeds
+ * @returns {void}
  */
   componentDidMount() {
     NewsActions.getSources();
@@ -43,6 +45,7 @@ class NewsFeeds extends React.Component {
 /**
  * This method gets called to clean up the dom
  * @memberof NewsFeeds
+ * @returns {void}
  */
   componentWillUnmount() {
     NewsStore.removeListener('change', this.getNewsSources);
@@ -53,6 +56,7 @@ class NewsFeeds extends React.Component {
  * The onRecieveChange listens for change
  * in the store
  * @memberof NewsFeeds
+ * @returns {void}
  */
   onRecieveChange() {
     NewsStore.on('change', this.getNewsSources);
@@ -62,8 +66,9 @@ class NewsFeeds extends React.Component {
 /**
  * The method uses the react controlled component
  * to update the inputted value.
- * @param {string} event
+ * @param {string} event value passed through
  * @memberof NewsFeeds
+ * @returns {void}
  */
   onSearch(event) {
     this.setState({
@@ -75,6 +80,7 @@ class NewsFeeds extends React.Component {
  * Update the initial newsSource to
  * sources coming from the store.
  * @memberof NewsFeeds
+ * @returns {void}
  */
   getNewsSources() {
     this.setState({
@@ -85,6 +91,7 @@ class NewsFeeds extends React.Component {
   /**
    *Re-Update error message
    * @memberof NewsFeeds
+   * @returns {void}
    */
   getNewsError() {
     this.setState({
@@ -93,7 +100,7 @@ class NewsFeeds extends React.Component {
   }
 
 /**
- * Returns newsSource and search input
+ * Returns newsSource and search input.
  * @returns {String|Array} newsSource and search
  * @memberof NewsFeeds
  */
@@ -111,7 +118,7 @@ class NewsFeeds extends React.Component {
                     <span>Welcome to NewsFlash</span>
                   </p>
                   <div className="page-header col-md-10 col-md-offset-1">
-                    <Input
+                    <SearchField
                       search={this.state.search}
                       onSearch={this.onSearch}
                     />

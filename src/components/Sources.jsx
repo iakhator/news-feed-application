@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 /**
  * A child component of Newsfeeds component.
- * @param {string} props
+ * @param {string} props passed param from NewsFee
  * @returns {void}
  */
 function Sources(props) {
@@ -33,21 +33,19 @@ function Sources(props) {
                     {sources.description}
                   </li>
                 </ul>
-                {sources.sortBysAvailable.map((sortBy) => {
-                  return (
-                    <div key={sortBy}>
-                      <ul className="sort pull-right">
-                        <li>
-                          <Link
-                            className="btn btn-sm"
-                            to={`/newsfeeds/${sources.id}/${sortBy}`}>
-                            See {sortBy} news
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  );
-                })}
+                {sources.sortBysAvailable.map(sortBy => (
+                  <div key={sortBy}>
+                    <ul className="sort pull-right">
+                      <li>
+                        <Link
+                          className="btn btn-sm"
+                          to={`/newsfeeds/${sources.id}/${sortBy}`}>
+                          See {sortBy} news
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                ))}
               </div>
           ))}
         </div>
@@ -56,7 +54,7 @@ function Sources(props) {
   );
 }
 
-Sources.PropTypes = {
+Sources.propTypes = {
   newsSource: PropTypes.array.isRequired,
   search: PropTypes.string.isRequired
 };

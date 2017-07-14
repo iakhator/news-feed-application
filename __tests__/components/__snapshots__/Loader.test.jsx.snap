@@ -1,17 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loader Spinner renders a snapshot 1`] = `
+exports[`Loader  should render correctly 1`] = `
 <div
   className="load"
 >
   Loading 
   <i
     className="fa fa-spinner fa-spin"
-    style={
-      Object {
-        "fontSize": 24,
-      }
-    }
   />
 </div>
 `;

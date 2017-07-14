@@ -21,8 +21,9 @@ class ArticlesStore extends EventEmitter {
 
   /**
    * set newsArticle to article.
-   * @param {Array} articles
+   * @param {Array} articles: passing a param of articles
    * @memberof ArticlesStore
+   * @return {void}
    */
   setArticle(articles) {
     this.newsArticles = articles;
@@ -31,7 +32,7 @@ class ArticlesStore extends EventEmitter {
 
   /**
    * returns newsArticle array.
-   * @returns {Array}
+   * @returns {Array} articles.
    * @memberof ArticlesStore
   */
   getArticles() {
@@ -40,8 +41,9 @@ class ArticlesStore extends EventEmitter {
 
   /**
    * Set error message
-   * @param {string} message
+   * @param {string} message: error message
    * @memberof ArticlesStore
+   * @return {void}
    */
   setError(message) {
     this.errorMessage = message;
@@ -50,7 +52,7 @@ class ArticlesStore extends EventEmitter {
 
   /**
    * Get error message
-   * @returns {string}
+   * @returns {string} message
    * @memberof ArticlesStore
    */
   getError() {
@@ -60,20 +62,20 @@ class ArticlesStore extends EventEmitter {
   /**
    * This method listens for action types then
    * respond accordingly.
-   * @param {object} action
-   * @returns {Array}
+   * @param {object} action: datatype
+   * @returns {Array} payload
    * @memberof ArticlesStore
    */
   handleActions(action) {
     switch (action.type) {
-    case 'RECIEVE_ARTICLES':
-      this.setArticle(action.articles);
-      break;
-    case 'RECIEVE_ARTICLES_ERROR':
-      this.setError(action.message);
-      break;
-    default:
-      return action;
+      case 'RECIEVE_ARTICLES':
+        this.setArticle(action.articles);
+        break;
+      case 'RECIEVE_ARTICLES_ERROR':
+        this.setError(action.message);
+        break;
+      default:
+        return action;
     }
   }
 }

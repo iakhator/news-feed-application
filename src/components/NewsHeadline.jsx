@@ -16,6 +16,7 @@ class NewsHeadline extends React.Component {
    * Creates an instance of NewsHeadline.
    * Initialize state
    * @memberof NewsHeadline
+   * @param {object} props
    */
   constructor(props) {
     super(props);
@@ -101,10 +102,17 @@ class NewsHeadline extends React.Component {
   }
 }
 
-NewsHeadline.PropTypes = {
+NewsHeadline.propTypes = {
   match: PropTypes.object,
   params: PropTypes.object,
   sourceId: PropTypes.string,
   sortBy: PropTypes.string
+};
+
+NewsHeadline.defaultProps = {
+  match: { source: 'name' },
+  params: { article: 'cnn' },
+  sourceId: 'cnn',
+  sortBy: 'top'
 };
 export default NewsHeadline;

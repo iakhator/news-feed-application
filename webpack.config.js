@@ -23,11 +23,14 @@ module.exports = {
       { test: /\.(scss)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader', use: ['css-loader', 'sass-loader']
-       }) },
+        }) },
     ]
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    stats: {
+      chunks: false
+    }
   },
   plugins: [new HtmlWebpackPlugin({
     template: 'src/index.html'

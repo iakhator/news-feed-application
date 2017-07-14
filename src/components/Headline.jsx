@@ -5,7 +5,7 @@ import SortBy from './SortBy';
 
 /**
  * Renders the articles from the news api
- * @param {Array} props
+ * @param {Array} props: data passed from Newsheadline
  * @returns {void}
  */
 function Headline(props) {
@@ -20,45 +20,43 @@ function Headline(props) {
           .replace(/-/g, ' ').toUpperCase()} NEWS
         </h2>
       </div>
-      {newsArticle.map((article) => {
-        return (
-          <div className="articles" key={article.title}>
-            <div className="row single">
-              <div className="col-md-4">
-                <img
-                  className="img-responsive"
-                  src={article.urlToImage}
-                  alt=""
-                />
-              </div>
-              <div className="col-md-8">
-                <h3 className="page-header">
-                  <Link to={article.url} target="_blank">
-                    {article.title}
-                  </Link>
-                </h3>
-                <div>
-                  <p className="description page-header">
-                    <i
-                      className="fa fa-newspaper-o"
-                      aria-hidden="true"
-                    /> {article.description}...
-                  </p>
-                  <p className="pull-left publish-time">
-                    <i className="fa fa-clock-o" aria-hidden="true" />
-                    {article.publishedAt}
-                  </p>
-                  <Link
-                    className="btn btn-sm see-more pull-right"
-                    to={article.url}
-                    target="_blank"> See more
-                  </Link>
-                </div>
+      {newsArticle.map(article => (
+        <div className="articles" key={article.title}>
+          <div className="row single">
+            <div className="col-md-4">
+              <img
+                className="img-responsive"
+                src={article.urlToImage}
+                alt=""
+              />
+            </div>
+            <div className="col-md-8">
+              <h3 className="page-header">
+                <Link to={article.url} target="_blank">
+                  {article.title}
+                </Link>
+              </h3>
+              <div>
+                <p className="description page-header">
+                  <i
+                    className="fa fa-newspaper-o"
+                    aria-hidden="true"
+                  /> {article.description}...
+                </p>
+                <p className="pull-left publish-time">
+                  <i className="fa fa-clock-o" aria-hidden="true" />
+                  {article.publishedAt}
+                </p>
+                <Link
+                  className="btn btn-sm see-more pull-right"
+                  to={article.url}
+                  target="_blank"> See more
+                </Link>
               </div>
             </div>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 }

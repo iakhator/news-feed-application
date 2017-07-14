@@ -1,6 +1,5 @@
 import React from 'react';
-import sinon from 'sinon';
-import { shallow, mount , render } from 'enzyme';
+import { mount } from 'enzyme';
 import NewsHeadline from '../../src/components/NewsHeadline';
 import * as NewsActions from '../../src/actions/NewsActions';
 import ArticlesStore from '../../src/stores/ArticlesStore';
@@ -14,20 +13,27 @@ describe('NewsHeadline', () => {
         sortBy: 'top'
       }
     }
-  }
+  };
 
   it('renders without crashing', () => {
-    mount(<NewsHeadline {...props}/>)
+    mount(<NewsHeadline {...props} />);
   });
 
-  it('calls componentDidMount() lifecycle method', () => {
+  it('should call newsAction with parameter', () => {
     const newsHeadline = jest.fn();
-    const componentDidMountSpy = jest.spyOn(NewsHeadline.prototype, 'componentDidMount');
+    const newsActionSpy = jest.spyOn(NewsActions, 'getArticles');
+    const container = mount(
+      <NewsHeadline {...props} onChange={newsHeadline} />);
+    expect(newsActionSpy)
+    .toBeCalledWith(props.match.params.sourceId, props.match.params.sortBy);
+  });
+
+  it('should call articleStore', () => {
+    const newsHeadline = jest.fn();
     const articleStoreSpy = jest.spyOn(ArticlesStore, 'on');
-    const  newsActionSpy = jest.spyOn(NewsActions, 'getArticles');
-    const container = mount(<NewsHeadline {...props} onChange={newsHeadline}/>);
-    expect(componentDidMountSpy).toHaveBeenCalled();
-    expect(newsActionSpy).toBeCalledWith(props.match.params.sourceId, props.match.params.sortBy);
+    const container = mount(<NewsHeadline
+      {...props} onChange={newsHeadline}
+      />);
     expect(articleStoreSpy).toHaveBeenCalled();
   });
 });

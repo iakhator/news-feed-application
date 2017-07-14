@@ -20,8 +20,8 @@ export function getSources() {
 
 /**
  * Dispatches the articles received from the api request.
- * @param {string} sourceId
- * @param {string} sortBy
+ * @param {string} sourceId: articles id
+ * @param {string} sortBy: article sortBys
  * @export getArticle
  * @returns {Array} return array of news article
  */

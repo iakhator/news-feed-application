@@ -12,7 +12,7 @@ describe('NewsHeadline', () => {
 
   const container = shallow(<Headline {...props} />);
 
-  it('renders correctly', () => {
+  it('should render correctly', () => {
     const tree = renderer.create(
       <Headline {...props} />
     ).toJSON();
@@ -23,7 +23,7 @@ describe('NewsHeadline', () => {
     shallow(<Headline {...props} />);
   });
 
-  it('check for classes length', () => {
+  it('should have sort-header and article-title class', () => {
     const wrapper = mount(<Headline {...props} />);
     expect(wrapper.find('.sort-header').length).toBe(1);
     expect(wrapper.find('.article-title').length).toBe(1);

@@ -22,7 +22,8 @@ class NewsStore extends EventEmitter {
 
   /**
    * set newsSources to article.
-   * @param {Array} sources
+   * @param {Array} sources: set params to array
+   * @return {void} setting source
    * @memberof NewsStore
    */
   setSources(sources) {
@@ -32,7 +33,8 @@ class NewsStore extends EventEmitter {
 
   /**
    * Set error message
-   * @param {string} message
+   * @param {string} message set error message
+   * @return {string} error message
    * @memberof NewsStore
    */
   setError(message) {
@@ -42,7 +44,7 @@ class NewsStore extends EventEmitter {
 
    /**
    * returns newsSources array.
-   * @returns {Array}
+   * @returns {Array} newsSources sources
    * @memberof NewsStore
   */
   getSources() {
@@ -51,7 +53,7 @@ class NewsStore extends EventEmitter {
 
   /**
    * Get error message
-   * @returns {string}
+   * @returns {string} error string
    * @memberof NewsStore
    */
   getError() {
@@ -65,20 +67,20 @@ class NewsStore extends EventEmitter {
   /**
    * This method listens for action types then
    * respond accordingly.
-   * @param {object} action
-   * @returns {Array}
+   * @param {object} action datatype recieve
+   * @returns {Array} action payload
    * @memberof NewsStore
    */
   handleActions(action) {
     switch (action.type) {
-    case 'RECIEVE_SOURCES':
-      this.setSources(action.sources);
-      break;
-    case 'RECIEVE_SOURCES_ERROR':
-      this.setError(action.message);
-      break;
-    default:
-      return false;
+      case 'RECIEVE_SOURCES':
+        this.setSources(action.sources);
+        break;
+      case 'RECIEVE_SOURCES_ERROR':
+        this.setError(action.message);
+        break;
+      default:
+        return false;
     }
   }
 }

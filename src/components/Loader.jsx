@@ -9,7 +9,7 @@ function Loader() {
     <div className="load">
       Loading <i
       className="fa fa-spinner fa-spin"
-      style={{ fontSize: 24 }} />
+      />
     </div>
   );
 }

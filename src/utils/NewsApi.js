@@ -6,10 +6,10 @@ import axios from 'axios';
  * @param {string} url the sources endpoint.
  * @returns {Promise} the sources of newsapi.
  */
-export const getNewsSource = (url) => {
-  return axios.get(url)
-  .then(source => source.data.sources);
-};
+export const getNewsSource = url => (
+  axios.get(url)
+  .then(source => source.data.sources)
+);
 
 /**
  * Recieves a url as parameter and return
@@ -18,13 +18,13 @@ export const getNewsSource = (url) => {
  * @param {string} url articles endpoint.
  * @returns  {Promise} the articles of newsapi
  */
-export const getNews = (url) => {
-  return axios.get(url)
-  .then(source => source.data.articles);
-};
+export const getNews = url => (
+   axios.get(url)
+  .then(source => source.data.articles)
+);
 
-export const getNewsSources = () => {
-  return new Promise((resolve, reject) => {
+export const getNewsSources = () => (
+  new Promise((resolve, reject) => {
     axios.get('https://newsapi.org/v1/sources?language=en')
     .then((res) => {
       resolve((res));
@@ -32,5 +32,5 @@ export const getNewsSources = () => {
     .catch((error) => {
       if (error) reject(error);
     });
-  });
-};
+  })
+);

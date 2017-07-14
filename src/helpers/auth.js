@@ -3,9 +3,9 @@ import { firebaseAuth, provider } from '../config/firebase-config';
 class Auth {
   logIn() {
     firebaseAuth.signInWithRedirect(provider);
-    return firebaseAuth.getRedirectResult().then((result) => {
-      return result.user;
-    }).catch(error => error);
+    return firebaseAuth.getRedirectResult().then(result => (
+      result.user
+    )).catch(error => error);
   }
 
   logOut() {

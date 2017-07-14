@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NewsHeadline renders correctly 1`] = `
+exports[`NewsHeadline should render correctly 1`] = `
 <div>
   <div
     className="sort-header sort-fixed affix"

@@ -14,7 +14,7 @@ import { firebaseAuth } from '../config/firebase-config';
 /**
  * Proctected private Route
  * @params {object} { component: Component, isAuthenticated, ...rest }
- * @returns {route}
+ * @returns {component} protected route
  */
 function PrivateRoute({ component: Component, isAuthenticated, ...rest }) {
   return (
@@ -28,14 +28,14 @@ function PrivateRoute({ component: Component, isAuthenticated, ...rest }) {
 }
 
 PrivateRoute.propTypes = {
-  component: PropTypes.element.isRequired,
+  component: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired
 };
 
 /**
  * Proctected public Route
  * @params {object} { component: Component, isAuthenticated, ...rest }
- * @returns {component}
+ * @returns {component} public route
  */
 function PublicRoute({ component: Component, isAuthenticated, ...rest }) {
   return (
@@ -49,7 +49,7 @@ function PublicRoute({ component: Component, isAuthenticated, ...rest }) {
 }
 
 PublicRoute.propTypes = {
-  component: PropTypes.element.isRequired,
+  component: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool.isRequired
 };
 
@@ -72,6 +72,7 @@ class App extends React.Component {
    * Checks for user signin or signout
    * set the state
    * @memberof App
+   * @return {string|bolean} displayName, isAuthenticated
    */
   componentDidMount() {
     firebaseAuth.onAuthStateChanged((user) => {
