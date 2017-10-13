@@ -20,7 +20,7 @@ describe('News API Actions', () => {
       expect(NewsActions.getSources).toBeDefined();
     });
 
-    it('should dispatch #getSources when called', () =>
+    it('should dispatch sources action types when called', () =>
       NewsActions.getSources()
         .then(() => {
           const dispatcherCall = spyOnDispatcher.mock.calls[0][0];
@@ -40,7 +40,7 @@ describe('News API Actions', () => {
       expect(NewsActions.getArticles).toBeDefined();
     });
 
-    it('should dispatch #getArticles when called', () =>
+    it('should dispatch articles action types when called with sourceId and sortBy', () =>
       NewsActions.getArticles('abc-news-au', 'top')
         .then(() => {
           const dispatcherCall = spyOnDispatcher.mock.calls[0][0];
