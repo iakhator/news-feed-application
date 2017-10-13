@@ -19,10 +19,6 @@ describe('NewsHeadline', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders without crashing', () => {
-    shallow(<Headline {...props} />);
-  });
-
   it('should have sort-header and article-title class', () => {
     const wrapper = mount(<Headline {...props} />);
     expect(wrapper.find('.sort-header').length).toBe(1);

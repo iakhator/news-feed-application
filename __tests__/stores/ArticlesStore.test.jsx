@@ -11,7 +11,7 @@ describe('ArticlesStore', () => {
     expect(ArticlesStore.getArticles()).toEqual([]);
   });
 
-  it('should register a callback with the dispatcherxist', () => {
+  it('should check for a dispatcher', () => {
     expect(mockDispatcher.length).toBe(1);
   });
 

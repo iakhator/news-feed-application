@@ -8,7 +8,7 @@ const mockDispatcher = AppDispatcher.register.mock.calls[0][0];
 
 
 describe('NewsStore', () => {
-  it('should register a callback with the dispatcher', () => {
+  it('should check for a dispatcheru', () => {
     expect(mockDispatcher.length).toBe(1);
   });
 

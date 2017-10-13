@@ -21,7 +21,7 @@ describe('<Home />', () => {
     container.instance().login();
   });
 
-  it('Should render <div /> tags', () => {
+  it('Should make sure <div /> tags exist', () => {
     expect(container.find('div').toExist);
   });
 
