@@ -42,6 +42,9 @@ User have to sign in before it can be use.
 * Users cannot view full article wthin application.
 * Users cannot share articles on Social media platforms.
 
+## What To Add In The Future
+* Users can log in with inputing email and password.
+
 ## Contributions
  Contributions are always welcome. If you are interested in enhancing the features in the project, follow these steps below:
  * Fork the project to your repository then clone it to your local machine.
