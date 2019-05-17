@@ -1,6 +1,9 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route, Redirect, Switch
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Home from './home/Home';
@@ -20,9 +23,13 @@ function PrivateRoute({ component: Component, isAuthenticated, ...rest }) {
   return (
     <Route
       {...rest}
-      render={props => (isAuthenticated === true
-      ? <Component {...props} />
-      : <Redirect to="/" />)}
+      render={props =>
+        isAuthenticated === true ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to="/" />
+        )
+      }
     />
   );
 }
@@ -41,9 +48,13 @@ function PublicRoute({ component: Component, isAuthenticated, ...rest }) {
   return (
     <Route
       {...rest}
-      render={props => (isAuthenticated === false
-      ? <Component {...props} />
-      : <Redirect to="/newsfeeds" />)}
+      render={props =>
+        isAuthenticated === false ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to="/newsfeeds" />
+        )
+      }
     />
   );
 }
