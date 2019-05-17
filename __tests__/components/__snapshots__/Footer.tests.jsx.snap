@@ -11,7 +11,7 @@ exports[`Footer should render correctly 1`] = `
       className="text-muted text-center"
     >
       ©
-      2017
+      2019
       , Made By Itua Akhator
     </p>
   </div>

@@ -14,21 +14,16 @@ function Headline(props) {
     <div>
       <div className="sort-header sort-fixed affix">
         <SortBy sourceId={sourceId} />
-        <h2
-          className="article-title">
-          {sortBy.toUpperCase()} {sourceId
-          .replace(/-/g, ' ').toUpperCase()} NEWS
+        <h2 className="article-title">
+          {sortBy.toUpperCase()} {sourceId.replace(/-/g, ' ').toUpperCase()}{' '}
+          NEWS
         </h2>
       </div>
       {newsArticle.map(article => (
         <div className="articles" key={article.title}>
           <div className="row single">
             <div className="col-md-4">
-              <img
-                className="img-responsive"
-                src={article.urlToImage}
-                alt=""
-              />
+              <img className="img-responsive" src={article.urlToImage} alt="" />
             </div>
             <div className="col-md-8">
               <h3 className="page-header">
@@ -38,20 +33,20 @@ function Headline(props) {
               </h3>
               <div>
                 <p className="description page-header">
-                  <i
-                    className="fa fa-newspaper-o"
-                    aria-hidden="true"
-                  /> {article.description}...
+                  <i className="fa fa-newspaper-o" aria-hidden="true" />{' '}
+                  {article.description}...
                 </p>
                 <p className="pull-left publish-time">
                   <i className="fa fa-clock-o" aria-hidden="true" />
                   {article.publishedAt}
                 </p>
-                <Link
+                <a
                   className="btn btn-sm see-more pull-right"
-                  to={article.url}
-                  target="_blank"> See more
-                </Link>
+                  href={article.url}
+                  target="_blank"
+                >
+                  See more yes
+                </a>
               </div>
             </div>
           </div>

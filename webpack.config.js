@@ -17,13 +17,18 @@ module.exports = {
   module: {
     rules: [
       { test: /\.(jsx)$/, exclude: /node_modules/, use: 'babel-loader' },
-      { test: /\.(js)$/,
+      {
+        test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'] },
-      { test: /\.(scss)$/,
+        use: ['babel-loader', 'eslint-loader']
+      },
+      {
+        test: /\.(scss)$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader', use: ['css-loader', 'sass-loader']
-        }) },
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
+      }
     ]
   },
   devServer: {
@@ -32,27 +37,18 @@ module.exports = {
       chunks: false
     }
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: 'src/index.html'
-  }),
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    }),
     new Dotenv({
-      path: '.env',
-      safe: false,
+      path: './.env',
+      safe: false
     }),
-    new ExtractTextPlugin({ // define where to save the file
+    new ExtractTextPlugin({
+      // define where to save the file
       filename: 'css/index.bundle.css',
-      allChunks: true,
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        API_KEY: JSON.stringify(process.env.API_KEY),
-        AUTH_DOMAIN: JSON.stringify(process.env.AUTH_DOMAIN),
-        DATABASE_URL: JSON.stringify(process.env.DATABASE_URL),
-        PROJECT_ID: JSON.stringify(process.env.PROJECT_ID),
-        STORAGE_BUCKET: JSON.stringify(process.env.STORAGE_BUCKET),
-        MESSENGING_SENDER_ID: JSON.stringify(process.env.MESSENGING_SENDER_ID),
-        NEWS_API_KEY: JSON.stringify(process.env.NEWS_API_KEY)
-      }
+      allChunks: true
     })
   ]
 };
