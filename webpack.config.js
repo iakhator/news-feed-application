@@ -42,7 +42,7 @@ module.exports = {
       template: 'src/index.html'
     }),
     new Dotenv({
-      path: './.env',
+      path: '.env',
       safe: false
     }),
     new ExtractTextPlugin({
