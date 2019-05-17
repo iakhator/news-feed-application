@@ -15,10 +15,6 @@ describe('NewsFeeds', () => {
     expect(container.state().search).toBe('');
   });
 
-  it('Should have a `container` div', () => {
-    expect(container.find('.container')).toBeTruthy();
-  });
-
   it('should ', () => {
     expect(container.state().isAuthenticated).toBe(false);
   });

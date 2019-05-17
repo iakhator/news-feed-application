@@ -3,7 +3,7 @@ import 'firebase/auth';
 
 // Initialize Firebase
 const config = {
-  apiKey: process.env.API_KEY,
+  apiKey: process.env.API_KEY || 'AIzaSyD8gGi5DVnekif7k7sG9Vx3j149SnhozC4',
   authDomain: process.env.AUTH_DOMAIN,
   databaseURL: process.env.DATABASE_URL,
   projectId: process.env.PROJECT_ID,
@@ -14,10 +14,6 @@ const config = {
 
 firebase.initializeApp(config);
 
-const firebaseAuth = firebase.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
+export const firebaseAuth = firebase.auth();
+export const provider = new firebase.auth.GoogleAuthProvider();
 
-module.exports = {
-  provider,
-  firebaseAuth
-};

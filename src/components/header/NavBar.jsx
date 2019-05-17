@@ -22,10 +22,11 @@ class NavBar extends React.Component {
     this.state = {
       isAuthenticated: true
     };
+
     this.logOut = this.logOut.bind(this);
   }
 
-  /**
+   /**
    *Initialize the signing out of
    * the user and also set the state
    * @memberof NavBar
@@ -38,14 +39,13 @@ class NavBar extends React.Component {
       });
     }
   }
-
   /**
    * This method renders output as HTML using JSX.
    * It renders the navigation bar
    * @return {void}
    */
   render() {
-    const { authenticate, displayName } = this.props;
+    const { authenticate, displayName, onClick } = this.props;
     return (
       <nav className="navbar navbar-fixed-top navbar-default ">
         <div className="container">

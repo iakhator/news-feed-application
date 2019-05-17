@@ -16,7 +16,8 @@ exports[`NewsHeadline should render correctly 1`] = `
       TOP
        
       CNN
-       NEWS
+       
+      NEWS
     </h2>
   </div>
 </div>

@@ -3,9 +3,7 @@
 exports[`SearchField should render correctly 1`] = `
 <input
   className="form-control"
-  onChange={undefined}
   placeholder="Search for your favourite news sources on the go..."
   type="text"
-  value={undefined}
 />
 `;
