@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/iakhator/news-feed-application#readme",
   "dependencies": {
-    "axios": "^0.16.1",
+    "axios": "^0.21.1",
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
